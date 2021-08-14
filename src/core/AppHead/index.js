@@ -17,7 +17,7 @@ export default function AppHead() {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://ana-portfolio.vercel.app/"
+        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/"
       />
       <meta property="og:title" content="Portfolio Ana Paula Dezuó" />
       <meta
@@ -26,14 +26,14 @@ export default function AppHead() {
       />
       <meta
         property="og:image"
-        content="https://ana-portfolio.vercel.app/images/projetos/overview.png"
+        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/projetos/overview.png"
       />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:url"
-        content="https://ana-portfolio.vercel.app/"
+        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/"
       />
       <meta property="twitter:title" content="Portfolio Ana Paula Dezuó" />
       <meta
@@ -42,7 +42,7 @@ export default function AppHead() {
       />
       <meta
         property="twitter:image"
-        content="https://ana-portfolio.vercel.app/images/instalura-capa.png"
+        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/instalura-capa.png"
       />
 
       <link

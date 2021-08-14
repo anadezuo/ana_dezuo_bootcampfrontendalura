@@ -29,7 +29,7 @@ export default function Contato({ setTheme }) {
         </Text>
         <img
           style={{ width: '150px' }}
-          src="https://ana-portfolio.vercel.app/images/block.png"
+          src="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/block.png"
           alt="Um bloco com um ponto de interrogação do jogo Mario Bros"
         />
       </div>
