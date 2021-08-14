@@ -1,26 +1,21 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../src/UI/GlobalStyles';
+import { ThemeLight } from '../src/theme';
+import AppHead from '../src/core/AppHead';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`
-
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-}
-
+// eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
+  const [theme, setTheme] = useState(ThemeLight);
+
   return (
     <>
-      <GlobalStyle />
+      <AppHead />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <GlobalStyle />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} theme={theme} setTheme={setTheme} />
       </ThemeProvider>
     </>
-  )
+  );
 }
