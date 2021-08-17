@@ -26,7 +26,7 @@ export default function AppHead() {
       />
       <meta
         property="og:image"
-        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/projetos/overview.png"
+        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/capa/overview.png"
       />
 
       {/* Twitter */}
@@ -42,7 +42,7 @@ export default function AppHead() {
       />
       <meta
         property="twitter:image"
-        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/instalura-capa.png"
+        content="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/capa/overview.png"
       />
 
       <link

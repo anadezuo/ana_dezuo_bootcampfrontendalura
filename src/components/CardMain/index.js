@@ -24,12 +24,14 @@ export default function CardMain({
 }
 
 CardMain.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  imageUrl: PropTypes.string,
   link: PropTypes.string.isRequired,
   text: PropTypes.string,
 };
 
 CardMain.defaultProps = {
+  title: 'Projeto sem descrição',
+  imageUrl: 'https://ana-portfolio.vercel.app/images/block.png',
   text: '',
 };
