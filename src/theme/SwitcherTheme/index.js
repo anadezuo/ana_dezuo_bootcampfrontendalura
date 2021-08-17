@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const ButtonTheme = styled.button`
   background-color: inherit;
@@ -8,7 +9,7 @@ export const ButtonTheme = styled.button`
   padding-left: 15px;
 `;
 
-export function SwitcherTheme({ theme }) {
+export function SwitcherTheme({ isThemeDark }) {
   const themeContext = useContext(ThemeContext);
   const colorLight = themeContext.colors.primary.main.color;
   const colorDark = themeContext.colors.primary.contrast.color;
@@ -55,5 +56,13 @@ export function SwitcherTheme({ theme }) {
     </svg>
   );
 
-  return theme ? lightIcon : darkIcon;
+  return isThemeDark ? lightIcon : darkIcon;
 }
+
+SwitcherTheme.propTypes = {
+  isThemeDark: PropTypes.bool,
+};
+
+SwitcherTheme.defaultProps = {
+  isThemeDark: false,
+};

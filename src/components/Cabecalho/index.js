@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Menu from './styles';
 import Text from '../foundation/Text';
 import { ButtonTheme, SwitcherTheme } from '../../theme/SwitcherTheme';
 import { ThemeLight, ThemeDark } from '../../theme';
 
-// eslint-disable-next-line react/prop-types
 export default function Cabecalho({ setTheme }) {
   const [isDark, setIsDark] = useState(false);
   const changeTheme = () => {
@@ -53,7 +52,7 @@ export default function Cabecalho({ setTheme }) {
           Contato
         </Text>
         <ButtonTheme onClick={changeTheme}>
-          <SwitcherTheme theme={isDark} />
+          <SwitcherTheme isThemeDark={isDark} />
         </ButtonTheme>
       </Menu.Navbar>
     </Menu>
@@ -61,7 +60,7 @@ export default function Cabecalho({ setTheme }) {
 }
 
 Cabecalho.propTypes = {
-  // setTheme: PropTypes.node.isRequired,
+  setTheme: PropTypes.func.isRequired,
 };
 
 Cabecalho.defaultProps = {};

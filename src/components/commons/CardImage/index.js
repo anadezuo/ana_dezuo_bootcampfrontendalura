@@ -26,6 +26,6 @@ CardImage.propTypes = {
 };
 
 CardImage.defaultProps = {
-  imageUrl: 'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/block.png',
+  imageUrl: 'https://ana-portfolio.vercel.app/images/block.png',
   main: false,
 };

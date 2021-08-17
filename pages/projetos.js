@@ -4,7 +4,6 @@ import Cabecalho from '../src/components/Cabecalho';
 import Text from '../src/components/foundation/Text';
 
 export default function Projetos({ setTheme }) {
-  // TODO: Atualizar, estilizado simples (inline) pontualmente
   return (
     <>
       <Cabecalho setTheme={setTheme} />
@@ -38,7 +37,7 @@ export default function Projetos({ setTheme }) {
 }
 
 Projetos.propTypes = {
-  setTheme: PropTypes.node.isRequired,
+  setTheme: PropTypes.func.isRequired,
 };
 
 Projetos.defaultProps = {};

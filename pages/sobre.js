@@ -5,7 +5,6 @@ import Text from '../src/components/foundation/Text';
 import Box from '../src/components/foundation/Box';
 
 export default function Sobre({ setTheme }) {
-  // TODO: Atualizar, estilizado simples (inline) pontualmente
   return (
     <Box
       width="100vw"
@@ -42,7 +41,7 @@ export default function Sobre({ setTheme }) {
 }
 
 Sobre.propTypes = {
-  setTheme: PropTypes.node.isRequired,
+  setTheme: PropTypes.func.isRequired,
 };
 
 Sobre.defaultProps = {};
