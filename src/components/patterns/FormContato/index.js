@@ -21,7 +21,7 @@ const Form = styled.form`
   margin-right: 15px;
 `;
 
-function FormContent({ setModal }) {
+function FormContent() {
   const [contactInfo, setContactInfo] = useState({
     name: '',
     email: '',
@@ -68,13 +68,13 @@ function FormContent({ setModal }) {
         throw new Error('Não foi possível cadastrar o usuário');
       })
       .then((respostaConvertidaEmObjeto) => {
-        setModal(false);
         setMessageSnackbar(
           `${respostaConvertidaEmObjeto?.name} sua mensagem foi enviada com sucesso!`,
         );
         setOpenSnackbar(true);
         setContactInfo({ name: '', email: '', message: '' });
         setSubmissionStatus(formListStates.DONE);
+        // setModal(false);
       })
       .catch((error) => {
         setMessageSnackbar(`Usuário não cadastrado. Retornado erro ${error}`);
@@ -208,16 +208,12 @@ export default function FormContato({ theme, propsModal, setModal }) {
           >
             <ButtonClose setAction={setModal} />
           </Box>
-          <FormContent setModal={setModal} />
+          <FormContent />
         </Box>
       </Grid.Col>
     </Grid.Row>
   );
 }
-
-FormContent.propTypes = {
-  setModal: PropTypes.func.isRequired,
-};
 
 FormContato.propTypes = {
   theme: PropTypes.shape({}).isRequired,

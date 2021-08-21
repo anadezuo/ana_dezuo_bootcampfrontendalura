@@ -14,7 +14,7 @@ export default function Home({ theme, setTheme }) {
     >
       <Cabecalho setTheme={setTheme} />
       <Capa theme={theme} />
-      <Projetos />
+      <Projetos theme={theme} />
       <Footer />
     </Box>
   );
