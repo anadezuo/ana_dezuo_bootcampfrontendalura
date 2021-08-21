@@ -1,44 +1,44 @@
 const typographyVariants = {
   // [title] - Fira Sans Condensed
   title: {
-    fontSize: '90px',
+    fontSize: '48px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
   title2: {
-    fontSize: '60px',
+    fontSize: '39px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
   titleXS: {
-    fontSize: '64px',
+    fontSize: '39px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
   titleXS2: {
-    fontSize: '36px',
+    fontSize: '31px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
   // [subTitle]
   subTitle: {
-    fontSize: '48px',
+    fontSize: '39px',
     fontWeight: '300',
     lineHeight: 1.25, // 125%
   },
   // [paragraph]
   paragraph: {
-    fontSize: '28px',
+    fontSize: '20px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
   paragraphLight: {
-    fontSize: '38px',
+    fontSize: '20px',
     fontWeight: '300',
     lineHeight: 1.25, // 125%
   },
   paragraphBold: {
-    fontSize: '32px',
+    fontSize: '20px',
     fontWeight: '700',
     lineHeight: 1.25, // 125%
   },
@@ -48,18 +48,18 @@ const typographyVariants = {
     lineHeight: 1.25, // 125%
   },
   paragraphXSLight: {
-    fontSize: '24px',
+    fontSize: '18px',
     fontWeight: '300',
     lineHeight: 1.25, // 125%
   },
-  paragraphXsBold: {
-    fontSize: '24px',
+  paragraphXSBold: {
+    fontSize: '18px',
     fontWeight: '700',
     lineHeight: 1.25, // 125%
   },
   // [smallestException]
   smallestException: {
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '400',
     lineHeight: 1, // 100%
   },

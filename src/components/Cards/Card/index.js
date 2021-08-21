@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardImage from '../commons/CardImage';
-import CardTitle from '../commons/CardTitle';
+import CardImage from '../../commons/CardImage';
+import CardTitle from '../../commons/CardTitle';
 import CardWrapper from './styles';
 
 export default function Card({ title, imageUrl, link }) {

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 
 const CardWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};;
