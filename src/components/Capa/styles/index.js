@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import styled from 'styled-components';
 
-export const CapaWrapper = styled.div`
+const CapaWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,14 +17,4 @@ CapaWrapper.Icons = styled.div`
   }
 `;
 
-export const ImageLogo = styled.img`
-
-  ${breakpointsMedia({
-    xs: css`
-      height: 100px;
-    `,
-    md: css`
-      height: 300px;
-    `,
-  })};
-`;
+export default CapaWrapper;

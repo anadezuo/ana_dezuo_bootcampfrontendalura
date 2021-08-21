@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import propToStyle from '../../../theme/utils/propToStyle';
+import propToStyle from '../../../../theme/utils/propToStyle';
 
 const Box = styled.div`
   ${propToStyle('flex')};
@@ -13,6 +13,7 @@ const Box = styled.div`
   ${propToStyle('backgroundPosition')};
   ${propToStyle('width')};
   ${propToStyle('height')};
+  ${propToStyle('alignItems')};
 `;
 
 export default Box;

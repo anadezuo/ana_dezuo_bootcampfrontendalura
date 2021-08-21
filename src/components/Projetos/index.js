@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../theme/utils/breakpointsMedia';
 import SectionTitle from '../SectionTitle';
-import CardsList from '../CardsList';
+import CardsList from '../Cards/CardsList';
 
 const WrapperProjetos = styled.article`
   display: flex;

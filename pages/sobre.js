@@ -1,46 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Cabecalho from '../src/components/Cabecalho';
-import Text from '../src/components/foundation/Text';
-import Box from '../src/components/foundation/Box';
+import Box from '../src/components/foundation/layout/Box';
+import Button from '../src/components/commons/Buttons/Button';
+import Modal from '../src/components/commons/Modal';
+import FormContato from '../src/components/patterns/FormContato';
 
-export default function Sobre({ setTheme }) {
+export default function Sobre({ theme, setTheme }) {
+  const [modal, setModal] = useState(false);
+
   return (
     <Box
       width="100vw"
       height="100vh"
+      display="flex"
     >
       <Cabecalho setTheme={setTheme} />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-        }}
-      >
-        <Text
-          tag="h1"
-          variant="subTitle"
-          color="primary.main"
-          textAlign="center"
-          marginTop="0"
-          marginBottom="0"
-        >
-          Página em construção
-        </Text>
-        <img
-          style={{ width: '150px' }}
-          src="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/block.png"
-          alt="Um bloco com um ponto de interrogação do jogo Mario Bros"
-        />
-      </div>
+      <Modal isOpen={modal} onClose={() => setModal(false)}>
+        {(propsModal) => (
+          <FormContato
+            propsModal={propsModal}
+            theme={theme}
+            setModal={setModal}
+          />
+        )}
+      </Modal>
+      <Button onClick={() => setModal(true)}> Entre em contato </Button>
     </Box>
   );
 }
 
 Sobre.propTypes = {
+  theme: PropTypes.shape({}).isRequired,
   setTheme: PropTypes.func.isRequired,
 };
 

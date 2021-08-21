@@ -50,6 +50,7 @@ Menu.Navbar = styled.div`
   display: flex;
   align-items: center;
   a {
+    border: none;
     color: ${({ theme }) => theme.colors.primary.contrast.color};
     &:hover,
     &:focus {

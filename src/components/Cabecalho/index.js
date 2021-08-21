@@ -7,6 +7,7 @@ import { ThemeLight, ThemeDark } from '../../theme';
 
 export default function Cabecalho({ setTheme }) {
   const [isDark, setIsDark] = useState(false);
+
   const changeTheme = () => {
     // eslint-disable-next-line no-unused-expressions
     isDark ? setTheme(ThemeLight) : setTheme(ThemeDark);
@@ -42,14 +43,6 @@ export default function Cabecalho({ setTheme }) {
           color="primary.contrast"
         >
           Sobre mim
-        </Text>
-        <Text
-          tag="a"
-          variant={{ xs: 'paragraphXS', md: 'paragraph' }}
-          href="/contato"
-          color="primary.contrast"
-        >
-          Contato
         </Text>
         <ButtonTheme onClick={changeTheme}>
           <SwitcherTheme isThemeDark={isDark} />

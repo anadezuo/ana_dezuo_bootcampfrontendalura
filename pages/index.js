@@ -4,7 +4,7 @@ import Capa from '../src/components/Capa';
 import Cabecalho from '../src/components/Cabecalho';
 import Projetos from '../src/components/Projetos';
 import Footer from '../src/components/Footer';
-import Box from '../src/components/foundation/Box';
+import Box from '../src/components/foundation/layout/Box';
 
 export default function Home({ theme, setTheme }) {
   return (
