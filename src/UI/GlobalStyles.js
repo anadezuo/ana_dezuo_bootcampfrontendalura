@@ -5,13 +5,13 @@ const GlobalStyle = createGlobalStyle`
   //css reset
   * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   ${normalize}
 
   body {
-    margin: 0;
-    padding: 0;
     font-family: ${({ theme }) => theme.fontFamily};
     background-color: ${({ theme }) => theme.colors.background.main.color};
   }

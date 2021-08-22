@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardImage from '../commons/CardImage';
-import CardTitle from '../commons/CardTitle';
+import CardImage from '../../commons/CardImage';
+import CardTitle from '../../commons/CardTitle';
 import CardWrapper from './styles';
 
 export default function Card({ title, imageUrl, link }) {
   return (
-    <a href={link} target="_blank" rel="noreferrer">
-      <CardWrapper>
-        <CardImage imageUrl={imageUrl} />
-        <CardWrapper.Text>
-          <CardTitle title={title} />
-        </CardWrapper.Text>
-      </CardWrapper>
-    </a>
+    <CardWrapper>
+      <CardImage imageUrl={imageUrl} />
+      <CardWrapper.Text>
+        <a href={link} target="_blank" rel="noreferrer">
+          <CardTitle title={title} main={false} />
+        </a>
+      </CardWrapper.Text>
+    </CardWrapper>
   );
 }
 

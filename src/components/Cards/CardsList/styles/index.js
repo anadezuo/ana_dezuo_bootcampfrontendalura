@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 
 const CardListWrapper = styled.section`
   display: grid;
@@ -9,15 +9,10 @@ const CardListWrapper = styled.section`
   align-items: center;
   margin: 32px auto;
 
-  a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.primary.main.color};
-  }
-
   ${breakpointsMedia({
     md: css`
       grid-template-columns: 250px 250px 250px;
-      grid-gap: 10px;
+      grid-gap: 25px;
       max-width: 900px;
     `,
   })};
@@ -38,6 +33,10 @@ CardListWrapper.ProjectMain = styled.div`
     md: css`
       order: 2;
       grid-column: 1 / span 3;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
     `,
   })}
 `;

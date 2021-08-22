@@ -1,41 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cabecalho from '../src/components/Cabecalho';
-import Text from '../src/components/foundation/Text';
-import Box from '../src/components/foundation/Box';
+import Box from '../src/components/foundation/layout/Box';
 
 export default function Sobre({ setTheme }) {
+  // const [modal, setModal] = useState(false);
+
   return (
-    <Box
-      width="100vw"
-      height="100vh"
-    >
+    <Box width="100vw" height="100vh" display="flex">
       <Cabecalho setTheme={setTheme} />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-        }}
-      >
-        <Text
-          tag="h1"
-          variant="subTitle"
-          color="primary.main"
-          textAlign="center"
-          marginTop="0"
-          marginBottom="0"
-        >
-          Página em construção
-        </Text>
-        <img
-          style={{ width: '150px' }}
-          src="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/block.png"
-          alt="Um bloco com um ponto de interrogação do jogo Mario Bros"
-        />
-      </div>
     </Box>
   );
 }

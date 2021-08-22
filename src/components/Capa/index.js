@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../foundation/Text';
-import { CapaWrapper, ImageLogo } from './styles';
+import CapaWrapper from './styles';
 import GithubIcon from '../commons/Icons/GithubIcon';
 import TwitterIcon from '../commons/Icons/TwitterIcon';
 import MediumIcon from '../commons/Icons/MediumIcon';
+import Logo from '../commons/Logo';
 
 export default function Capa({ theme }) {
   // eslint-disable-next-line react/prop-types
@@ -14,20 +15,9 @@ export default function Capa({ theme }) {
 
   return (
     <CapaWrapper className="capa">
-      {
-        // eslint-disable-next-line react/prop-types
-        theme.typeDark ? (
-          <ImageLogo
-            src="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/logo/logo_dark.png"
-            alt="Imagem com a letra A."
-          />
-        ) : (
-          <ImageLogo
-            src="https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/logo/logo_light.png"
-            alt="Imagem com a letra A."
-          />
-        )
-      }
+      <Logo
+        height={{ xs: '100px', md: '300px' }}
+      />
       <Text
         tag="h2"
         variant="subTitle"
@@ -45,7 +35,7 @@ export default function Capa({ theme }) {
         color="primary.main"
         textAlign="center"
         marginTop="0"
-        fontFamily="fontFamilyTitle"
+        fontFamily="fontFamilyException"
       >
         Olá, seja bem vindo ao meu portfólio de projetos
       </Text>

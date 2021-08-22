@@ -8,7 +8,9 @@ export default function CardText({ text }) {
       tag="p"
       variant="smallestException"
       textAlign="left"
-      margin="32px"
+      color="primary.main"
+      marginTop="10px"
+      marginBottom="10px"
     >
       {text}
     </Text>

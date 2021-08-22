@@ -50,11 +50,11 @@ export default function Text({
 // TODO: como deixar os dois argumentos no propTypes
 Text.propTypes = {
   tag: PropTypes.string,
-  variant: PropTypes.string || PropTypes.objectOf,
-  children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]).isRequired,
+  children: PropTypes.node,
 };
 
 Text.defaultProps = {
   tag: 'span',
-  variant: 'paragraph' || {},
+  children: null,
 };
