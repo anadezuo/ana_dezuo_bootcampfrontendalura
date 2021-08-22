@@ -9,14 +9,23 @@ const CardWrapper = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background.main.color};
   border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
-  box-shadow: 5px 5px 25px ${({ theme }) => theme.colors.secondary.main.color};
-
+  
   ${breakpointsMedia({
     md: css`
       margin-top: 32px;
       width: 250px;
     `,
   })};
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.primary.main.color};
+
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => theme.colors.theme.main.color};
+    }
+  }
 `;
 
 CardWrapper.Text = styled.div`

@@ -44,7 +44,7 @@ function FormContent() {
     });
   }
 
-  function handleCadastro(event) {
+  function handleContato(event) {
     event.preventDefault();
     setIsFormSubmitted(true);
 
@@ -83,21 +83,23 @@ function FormContent() {
       });
   }
 
-  const isActiveButtonCadastro = isEmpty(contactInfo.name)
+  const isActiveButtonContato = isEmpty(contactInfo.name)
     || isEmpty(contactInfo.email)
     || isEmpty(contactInfo.message);
 
   return (
-    <Form onSubmit={handleCadastro}>
+    <Form onSubmit={handleContato}>
       <Logo
         height={{ xs: '50px', md: '75px' }}
       />
       <Text
         variant="title2"
-        tag="h1"
+        tag="h2"
         textAlign="center"
         color="primary.main"
         fontFamily="fontFamilyException"
+        marginTop="30px"
+        marginBottom="30px"
       >
         Obrigada pela visita!
       </Text>
@@ -143,12 +145,12 @@ function FormContent() {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
-          variant={isActiveButtonCadastro ? 'secondary.main' : 'theme.main'}
-          color={isActiveButtonCadastro ? 'tertiary.contrast' : 'tertiary.main'}
+          variant={isActiveButtonContato ? 'primary.main' : 'theme.main'}
+          color={isActiveButtonContato ? 'tertiary.contrast' : 'tertiary.main'}
           type="submit"
-          disabled={isActiveButtonCadastro}
+          disabled={isActiveButtonContato}
         >
-          Cadastrar
+          Enviar mensagem
         </Button>
         {isFormSubmitted && submissionStatus === formListStates.DONE && (
           <SnackbarAlert

@@ -6,7 +6,8 @@ export default function CardImage({ imageUrl, main }) {
   return (
     <>
       {main ? (
-        <ImageDestaque.Main src={imageUrl} alt="Imagem do projeto" />
+        <ImageDestaque src={imageUrl} alt="Imagem do projeto" />
+
       ) : (
         <Image src={imageUrl} alt="Imagem do projeto" />
       )}

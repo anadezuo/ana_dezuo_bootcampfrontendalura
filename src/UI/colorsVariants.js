@@ -6,6 +6,11 @@ const colorsTheme = {
     contrast: {
       color: '#000',
     },
+    colorTransparency: {
+      main: {
+        color: 'rgba(251,192, 45, 0.3)',
+      },
+    },
   },
 };
 
@@ -44,6 +49,11 @@ export const colorsLight = {
       color: 'rgba(0, 0, 0, 0.1)',
     },
   },
+  colorTransparency: {
+    main: {
+      color: 'rgba(255, 255, 255, 0.8)',
+    },
+  },
   ...colorsTheme,
 };
 
@@ -80,6 +90,11 @@ export const colorsDark = {
   modal: {
     main: {
       color: 'rgba(255, 255, 255, 0.1)',
+    },
+  },
+  colorTransparency: {
+    main: {
+      color: 'rgba(21, 21, 21, 0.8)',
     },
   },
   ...colorsTheme,

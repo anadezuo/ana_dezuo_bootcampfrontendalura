@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import TextStyleVariantsMap from '../../foundation/Text';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import TextStyleVariantsMap from '../../../UI/TextStyleVariantsMap';
 import propToStyle from '../../../theme/utils/propToStyle';
 
 const Button = styled.button`
@@ -16,18 +15,12 @@ const Button = styled.button`
   transition: opacity ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
 
-  ${breakpointsMedia({
-    xs: css`
-      ${TextStyleVariantsMap.smallestException}
-    `,
-    md: css`
-      ${TextStyleVariantsMap.paragraph1}
-    `,
-  })};
+  ${TextStyleVariantsMap({ xs: 'smallestException' })};
 
   ${propToStyle('margin')};
   ${propToStyle('marginTop')};
   ${propToStyle('display')};
+  ${propToStyle('padding')};
   
   &:disabled {
     cursor: not-allowed;

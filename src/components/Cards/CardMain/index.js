@@ -1,25 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CardMainWrapper from './styles';
 import CardImage from '../../commons/CardImage';
 import CardTitle from '../../commons/CardTitle';
-import CardMainWrapper from './styles';
 import CardText from '../../commons/CardText';
+import Box from '../../foundation/layout/Box';
+import Button from '../../commons/Buttons/Button';
 
 export default function CardMain({
   title, imageUrl, link, text,
 }) {
   return (
-    <a href={link} target="_blank" rel="noreferrer">
+    <Box display="grid" placeItems="center" minHeight="100vh" padding="20px">
       <CardMainWrapper>
-        <CardImage imageUrl={imageUrl} main />
-        <CardMainWrapper.Test>
-          <CardTitle title={title} />
+        <CardMainWrapper.Information>
+          <CardTitle title={title} main />
           <CardMainWrapper.Text>
             <CardText text={text} />
+            <Box display="flex" flexDirection="row" justifyContent="flex-start">
+              <a href={link} target="_blank" rel="noreferrer">
+                <Button
+                  padding="5px"
+                  marginTop="10px"
+                  marginLeft="10px"
+                  variant="theme.main"
+                  backgroundColor="primary.main"
+                >
+                  {' '}
+                  Visitar
+                  {' '}
+                </Button>
+              </a>
+            </Box>
           </CardMainWrapper.Text>
-        </CardMainWrapper.Test>
+        </CardMainWrapper.Information>
+        <CardMainWrapper.Image>
+          <CardImage imageUrl={imageUrl} main />
+        </CardMainWrapper.Image>
       </CardMainWrapper>
-    </a>
+    </Box>
   );
 }
 

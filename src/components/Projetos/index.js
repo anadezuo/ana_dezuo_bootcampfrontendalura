@@ -40,7 +40,7 @@ export default function Projetos({ theme }) {
       <Box margin="15px">
         <Button
           variant="theme.main"
-          color="tertiary.contrast"
+          color="tertiary.main"
           onClick={() => setModal(true)}
         >
           {' '}
