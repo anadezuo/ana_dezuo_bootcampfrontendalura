@@ -76,8 +76,8 @@ function FormContent() {
         setSubmissionStatus(formListStates.DONE);
         // setModal(false);
       })
-      .catch((error) => {
-        setMessageSnackbar(`Usuário não cadastrado. Retornado erro ${error}`);
+      .catch(() => {
+        setMessageSnackbar('Desculpe, mas sua mensagem não pode ser enviada.');
         setOpenSnackbar(true);
         setSubmissionStatus(formListStates.ERROR);
       });
@@ -90,7 +90,7 @@ function FormContent() {
   return (
     <Form onSubmit={handleContato}>
       <Logo
-        height={{ xs: '50px', md: '75px' }}
+        height={{ xs: '100px', md: '100px' }}
       />
       <Text
         variant="title2"
@@ -115,7 +115,7 @@ function FormContent() {
 
       <div>
         <TextField
-          placeholder="Nome"
+          placeholder="Seu nome"
           type="text"
           name="name"
           color="primary.main"
@@ -125,7 +125,7 @@ function FormContent() {
       </div>
       <div>
         <TextField
-          placeholder="Email"
+          placeholder="email@dominio.com.br"
           type="email"
           name="email"
           color="primary.main"
@@ -135,7 +135,7 @@ function FormContent() {
       </div>
       <div>
         <TextField
-          placeholder="Mensagem"
+          placeholder="Sua mensagem"
           type="textArea"
           color="primary.main"
           name="message"

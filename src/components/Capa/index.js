@@ -16,7 +16,7 @@ export default function Capa({ theme }) {
   return (
     <CapaWrapper className="capa">
       <Logo
-        height={{ xs: '100px', md: '300px' }}
+        height={{ xs: '200px', md: '350px' }}
       />
       <Text
         tag="h2"
