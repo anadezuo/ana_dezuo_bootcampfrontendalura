@@ -4,12 +4,18 @@ import Cabecalho from '../src/components/Cabecalho';
 import Projetos from '../src/components/Projetos';
 import Box from '../src/components/foundation/layout/Box';
 
-export default function ProjetosPage({ theme, setTheme }) {
+export default function ProjetosPage({
+  theme, setTheme, isThemeDark, setIsThemeDark,
+}) {
   return (
     <Box
       marginTop={{ xs: '60px', md: '80px' }}
     >
-      <Cabecalho setTheme={setTheme} />
+      <Cabecalho
+        setTheme={setTheme}
+        isThemeDark={isThemeDark}
+        setIsThemeDark={setIsThemeDark}
+      />
       <Projetos theme={theme} />
     </Box>
   );
@@ -18,6 +24,10 @@ export default function ProjetosPage({ theme, setTheme }) {
 ProjetosPage.propTypes = {
   theme: PropTypes.shape({}).isRequired,
   setTheme: PropTypes.func.isRequired,
+  isThemeDark: PropTypes.bool,
+  setIsThemeDark: PropTypes.func.isRequired,
 };
 
-ProjetosPage.defaultProps = {};
+ProjetosPage.defaultProps = {
+  isThemeDark: false,
+};

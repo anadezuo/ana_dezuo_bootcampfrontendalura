@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Menu from './styles';
 import Text from '../foundation/Text';
 import { ButtonTheme, SwitcherTheme } from '../../theme/SwitcherTheme';
 import { ThemeLight, ThemeDark } from '../../theme';
 
-export default function Cabecalho({ setTheme }) {
-  const [isDark, setIsDark] = useState(false);
-
+export default function Cabecalho({ setTheme, isThemeDark, setIsThemeDark }) {
   const changeTheme = () => {
+    const newStateThemDark = !isThemeDark;
     // eslint-disable-next-line no-unused-expressions
-    isDark ? setTheme(ThemeLight) : setTheme(ThemeDark);
-    setIsDark(!isDark);
+    newStateThemDark ? setTheme(ThemeDark) : setTheme(ThemeLight);
+    setIsThemeDark(newStateThemDark);
   };
 
   return (
@@ -45,7 +44,7 @@ export default function Cabecalho({ setTheme }) {
           Sobre mim
         </Text>
         <ButtonTheme onClick={changeTheme}>
-          <SwitcherTheme isThemeDark={isDark} />
+          <SwitcherTheme isThemeDark={isThemeDark} />
         </ButtonTheme>
       </Menu.Navbar>
     </Menu>
@@ -54,6 +53,10 @@ export default function Cabecalho({ setTheme }) {
 
 Cabecalho.propTypes = {
   setTheme: PropTypes.func.isRequired,
+  isThemeDark: PropTypes.bool,
+  setIsThemeDark: PropTypes.func.isRequired,
 };
 
-Cabecalho.defaultProps = {};
+Cabecalho.defaultProps = {
+  isThemeDark: false,
+};

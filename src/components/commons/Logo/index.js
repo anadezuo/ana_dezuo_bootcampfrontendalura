@@ -41,5 +41,5 @@ Logo.propTypes = {
 
 Logo.defaultProps = {
   height: { xs: '25px', md: '50px' },
-  width: { xs: 'fit-content', md: 'fit-content' },
+  width: { xs: 'auto', md: 'auto' },
 };
