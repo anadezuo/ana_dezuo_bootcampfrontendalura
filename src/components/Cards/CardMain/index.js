@@ -24,7 +24,7 @@ export default function CardMain({
                   marginTop="10px"
                   marginLeft="10px"
                   variant="theme.main"
-                  backgroundColor="primary.main"
+                  color="tertiary.main"
                 >
                   {' '}
                   Visitar
