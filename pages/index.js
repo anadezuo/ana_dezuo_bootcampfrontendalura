@@ -6,13 +6,16 @@ import Projetos from '../src/components/Projetos';
 import Footer from '../src/components/Footer';
 import Box from '../src/components/foundation/layout/Box';
 
-export default function Home({ theme, setTheme }) {
+export default function Home({
+  theme, setTheme, isThemeDark, setIsThemeDark,
+}) {
   return (
-    <Box
-      width="100vw"
-      height="100vh"
-    >
-      <Cabecalho setTheme={setTheme} />
+    <Box width="100vw" height="100vh">
+      <Cabecalho
+        setTheme={setTheme}
+        isThemeDark={isThemeDark}
+        setIsThemeDark={setIsThemeDark}
+      />
       <Capa theme={theme} />
       <Projetos theme={theme} />
       <Footer />
@@ -23,6 +26,10 @@ export default function Home({ theme, setTheme }) {
 Home.propTypes = {
   theme: PropTypes.shape({}).isRequired,
   setTheme: PropTypes.func.isRequired,
+  isThemeDark: PropTypes.bool,
+  setIsThemeDark: PropTypes.func.isRequired,
 };
 
-Home.defaultProps = {};
+Home.defaultProps = {
+  isThemeDark: false,
+};

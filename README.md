@@ -1,84 +1,96 @@
-# Example app with styled-components
+<p align="center">
+  <img src="https://img.shields.io/badge/next.js-fbc02d?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Framework Nextjs">
+  <img src="https://img.shields.io/badge/JavaScript-fbc02d?style=for-the-badge&logo=javascript&logoColor=white" alt="Javascript" >
+  <img src="https://img.shields.io/badge/styled--components-fbc02d?style=for-the-badge&logo=styled-components&logoColor=white" alt="Biblioteca styled components">
+</p>
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+<h1 align="center">  
+  <img width="1036" alt="Captura de Tela 2021-08-23 às 23 43 46" src="https://user-images.githubusercontent.com/43011663/130547507-29977a09-0dbf-4376-964e-36596289e212.png">
+</h1>
 
-## Preview
+<h4 align="center"> 
+  Portfólio de Ana Dezuó
+</h4>
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+<p align="center">
+ <a href="#sobre"> 🖥️ Sobre</a> •
+ <a href="#funcionalidades"> ⚙️ Funcionalidades</a> •
+ <a href="#versão-mobile"> 📱 Versão Mobile</a> • 
+ <a href="#tecnologias"> 🛠️ Tecnologias</a> • 
+ <a href="#acessar-e-executar-o-projeto"> 🎡 Acessar e executar o projeto</a> • 
+ <a href="#licença"> 📄 Licença</a>
+</p>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
 
-## Deploy your own
+## Sobre
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+No Portfólio você irá encontrar alguns projetos que foram desenvolvidos por mim, mostrando uma listagem de projetos e um em destaque, e um formulário para me enviar uma mensagem.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+O projeto foi desenvolvido durante o **Bootcamp Front-end Avançado da [Alura](https://www.alura.com.br/bootcamp/front-end-avancado/matriculas-abertas)**. 
+Durante o bootcamp, foi aplicado muito conteúdo prático, além da criação de alguns projetos paralelos.
+Além do conhecimento sobre a linguagem, também foi explicado sobre o processo de desenvolvimento, CI/CD, patterns, testes e entre tantos outros temas.
 
-## How to use
+---
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Funcionalidades
+
+- [x] Listagem dos projetos desenvolvidos
+  - [x] Destaque para um projeto principal
+- [x] Tema Dark
+- [x] Formulário para envio de mensagem de contato
+
+---
+
+## Versão Mobile
+
+A versão mobile possui layout personalizado e responsabilidade nas fontes para melhor adaptação da leitura.
+
+<p align="center">
+   <img alt="Tela mobile da página principal" src="https://user-images.githubusercontent.com/43011663/130707742-6f1b1d8b-8f03-4aa1-8840-5bad27e6096c.png" width="200px">
+   <img alt="Tela mobile dos projetos" src="https://user-images.githubusercontent.com/43011663/130707734-5d32c6ac-630d-4e01-a018-1e3f8ace78c0.png" width="200px">
+</p>
+
+---
+
+## Tecnologias
+
+Foram utilizadas as seguintes tecnologias:
+
+-   **[Nextjs](https://nextjs.org/)**
+-   **[Styled Components](https://styled-components.com/)**
+-   **[Axios](https://github.com/axios/axios)** (futuramente)
+
+---
+
+## Acessar e executar o projeto
+
+O projeto estea hospedado pela Vercel, então é possível acessar o link [Portfólio](https://ana-dezuo-bootcamp-frontend-alura.vercel.app/).
+
+Para executar o projeto em sua máquina, é necessário ter o [Git](https://git-scm.com), e uma ferramenta para edição de código, tal como o [VSCode](https://code.visualstudio.com/).
+
+Após ferramentas instaladas, executar os comandos abaixo:
 
 ```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
+
+# Clone este repositório
+$ gh repo clone anadezuo/Ana_Dezuo_BootcampFrontendAlura
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Ana_Dezuo_BootcampFrontendAlura
+
+# Realizar a instalação das dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# A página irá subir no url http://localhost:3000 
+
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+---
 
-### Try it on CodeSandbox
+## Licença
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
-
-### Notes
-
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
-
-**pages/index.js**
-
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+(construção)
