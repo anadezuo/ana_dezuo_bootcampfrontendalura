@@ -21,7 +21,6 @@ export default function Cabecalho({ setTheme, isThemeDark, setIsThemeDark }) {
           variant={{ xs: 'paragraphXS', md: 'paragraph' }}
           href="/"
           color="black"
-          fontFamily="fontFamily"
         >
           Home
         </Text>

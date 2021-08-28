@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import propToStyle from '../../../theme/utils/propToStyle';
 import TextStyleVariantsMap from '../../../UI/TextStyleVariantsMap';
+import Link from '../../commons/Link';
 
 function hasColor(props) {
   if (props.color !== undefined) {
@@ -13,6 +14,7 @@ function hasColor(props) {
   }
   return '';
 }
+
 function hasFontFamily(props) {
   if (props.fontFamily !== undefined) {
     return css`
@@ -33,11 +35,12 @@ const TextBase = styled.span`
 `;
 
 export default function Text({
-  tag, variant, children, ...props
+  tag, variant, children, href, ...props
 }) {
   return (
     <TextBase
-      as={tag}
+      as={href ? Link : tag}
+      href={href}
       variant={variant}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
@@ -47,14 +50,16 @@ export default function Text({
   );
 }
 
-// TODO: como deixar os dois argumentos no propTypes
 Text.propTypes = {
   tag: PropTypes.string,
-  variant: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]).isRequired,
+  variant: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
   children: PropTypes.node,
+  href: PropTypes.string,
 };
 
 Text.defaultProps = {
   tag: 'span',
+  variant: 'paragraph',
   children: null,
+  href: '',
 };
