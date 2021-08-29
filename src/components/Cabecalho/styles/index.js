@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import styled from 'styled-components';
 
 const Menu = styled.nav`
   background-color: ${({ theme }) => theme.colors.background.contrast.color};
@@ -7,7 +6,7 @@ const Menu = styled.nav`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
-  z-index: 15;
+  //z-index: 15;
   position: fixed;
   width: 100vw;
   top: 0;
@@ -23,26 +22,20 @@ const Menu = styled.nav`
 `;
 
 Menu.Logo = styled.div`
-  display: none;
+  display: flex;
+    align-items: center;
+    background-color: ${({ theme }) => theme.colors.theme.main.color};
+    padding-left: 15px;
+    padding-right: 15px;
 
-  ${breakpointsMedia({
-    md: css`
-      display: flex;
-      align-items: center;
-      background-color: ${({ theme }) => theme.colors.theme.main.color};
-      padding-left: 15px;
-      padding-right: 15px;
-
-      a {
-        color: ${({ theme }) => theme.colors.primary.main.color};
-        &:hover,
-        &:focus {
-          font-weight: 700;
-          color: ${({ theme }) => theme.colors.theme.contrast.color};
-        }
+    a {
+      color: ${({ theme }) => theme.colors.primary.main.color};
+      &:hover,
+      &:focus {
+        font-weight: 700;
+        color: ${({ theme }) => theme.colors.theme.contrast.color};
       }
-    `,
-  })};
+    }
 `;
 
 Menu.Navbar = styled.div`
