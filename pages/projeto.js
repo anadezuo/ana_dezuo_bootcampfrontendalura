@@ -1,20 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Cabecalho from '../src/components/Cabecalho';
 import Box from '../src/components/foundation/layout/Box';
 import Text from '../src/components/foundation/Text';
 import SEO from '../src/core/Head/SEO';
 
-export default function Projeto({ setTheme, isThemeDark, setIsThemeDark }) {
+export default function Projeto() {
   return (
     <>
       <SEO headTitle="Projeto XX" />
       <Box width="100vw" height="100vh" display="flex">
-        <Cabecalho
-          setTheme={setTheme}
-          isThemeDark={isThemeDark}
-          setIsThemeDark={setIsThemeDark}
-        />
+        <Cabecalho />
         <Box
           marginTop="50px"
           display="flex"
@@ -32,13 +27,3 @@ export default function Projeto({ setTheme, isThemeDark, setIsThemeDark }) {
     </>
   );
 }
-
-Projeto.propTypes = {
-  setTheme: PropTypes.func.isRequired,
-  isThemeDark: PropTypes.bool,
-  setIsThemeDark: PropTypes.func.isRequired,
-};
-
-Projeto.defaultProps = {
-  isThemeDark: false,
-};

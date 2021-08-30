@@ -11,11 +11,10 @@ export const ImageLogo = styled.img`
 
 export default function Logo({ height, width }) {
   const themeContext = useContext(ThemeContext);
-  const isDark = themeContext.typeDark;
 
   return (
     <Box display="flex" justifyContent="center">
-      {isDark ? (
+      {themeContext.isDark ? (
         <ImageLogo
           height={height}
           width={width}
