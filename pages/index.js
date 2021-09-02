@@ -1,17 +1,20 @@
 import React from 'react';
-import Capa from '../src/components/Capa';
-import Cabecalho from '../src/components/Cabecalho';
-import Projetos from '../src/components/Projetos';
-import Footer from '../src/components/Footer';
+import websitePageHOC from '../src/components/wrappers/WebsitePageWrapper/hoc';
 import Box from '../src/components/foundation/layout/Box';
+import Capa from '../src/components/Capa';
+import Projetos from '../src/components/Projetos';
 
-export default function Home() {
+function HomeScreen() {
   return (
-    <Box width="100vw" height="100vh">
-      <Cabecalho />
+    <Box width="100%" height="100%">
       <Capa />
       <Projetos />
-      <Footer />
     </Box>
   );
 }
+
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: { headTitle: 'Home' },
+  },
+});

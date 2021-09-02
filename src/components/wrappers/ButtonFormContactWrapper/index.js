@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Box from '../../foundation/layout/Box';
-import Modal from '../Modal';
+import Modal from '../../commons/Modal';
 import FormContato from '../../patterns/FormContato';
-import Button from './Button';
+import Button from '../../commons/Buttons/Button';
 
-export default function ButtonContatoModal() {
+export default function ButtonFormContactWrapper() {
   const [modal, setModal] = useState(false);
 
   return (

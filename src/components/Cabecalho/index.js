@@ -38,7 +38,7 @@ export default function Cabecalho() {
           href="/sobre"
           color="primary.contrast"
         >
-          Sobre mim
+          Sobre
         </Text>
         <ButtonTheme onClick={handleToggleTheme}>
           <SwitcherTheme />

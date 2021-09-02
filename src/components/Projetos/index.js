@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../theme/utils/breakpointsMedia';
 import SectionTitle from '../SectionTitle';
 import CardsList from '../Cards/CardsList';
-import ButtonContatoModal from '../commons/Buttons/ButtonContatoModal';
+import ButtonFormContactWrapper from '../wrappers/ButtonFormContactWrapper';
 
 const WrapperProjetos = styled.article`
   display: flex;
@@ -11,8 +11,12 @@ const WrapperProjetos = styled.article`
   align-items: center;
 
   ${breakpointsMedia({
+    xs: css`
+      margin-top: 60px;
+    `,
     md: css`
       flex-wrap: wrap;
+      margin-top: 80px;
     `,
   })}
 `;
@@ -22,7 +26,7 @@ export default function Projetos() {
     <WrapperProjetos>
       <SectionTitle />
       <CardsList />
-      <ButtonContatoModal />
+      <ButtonFormContactWrapper />
     </WrapperProjetos>
   );
 }
