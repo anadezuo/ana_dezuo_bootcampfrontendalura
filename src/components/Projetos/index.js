@@ -12,11 +12,11 @@ const WrapperProjetos = styled.article`
 
   ${breakpointsMedia({
     xs: css`
-      margin-top: 60px;
+      margin: 35px 0;
     `,
     md: css`
       flex-wrap: wrap;
-      margin-top: 80px;
+      margin: 45px 0;
     `,
   })}
 `;

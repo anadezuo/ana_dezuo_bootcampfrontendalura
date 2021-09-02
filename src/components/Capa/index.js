@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Text from '../foundation/Text';
 import CapaWrapper from './styles';
-import GithubIcon from '../commons/Icons/GithubIcon';
-import TwitterIcon from '../commons/Icons/TwitterIcon';
-import MediumIcon from '../commons/Icons/MediumIcon';
+import GithubIcon from '../../assets/icons/GithubIcon';
+import TwitterIcon from '../../assets/icons/TwitterIcon';
+import MediumIcon from '../../assets/icons/MediumIcon';
 import Logo from '../commons/Logo';
 
 export default function Capa() {
