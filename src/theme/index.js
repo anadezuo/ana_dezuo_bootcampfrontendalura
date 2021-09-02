@@ -20,12 +20,12 @@ const styles = {
 
 export const ThemeLight = {
   colors: colorsLight,
-  typeDark: false,
+  isDark: false,
   ...styles,
 };
 
 export const ThemeDark = {
   colors: colorsDark,
-  typeDark: true,
+  isDark: true,
   ...styles,
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardMainWrapper from './styles';
-import CardImage from '../../commons/CardImage';
-import CardTitle from '../../commons/CardTitle';
-import CardText from '../../commons/CardText';
+import CardImage from '../CardImage';
+import CardTitle from '../CardTitle';
+import CardText from '../CardText';
 import Box from '../../foundation/layout/Box';
 import Button from '../../commons/Buttons/Button';
 

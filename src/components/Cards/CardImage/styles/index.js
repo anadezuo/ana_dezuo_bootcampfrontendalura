@@ -13,7 +13,8 @@ export const ImageDestaque = styled.img`
       height: 330px;
       width: auto;
       padding: 15px;
-      border: 5px solid ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+      border: 5px solid
+        ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
       transform: translateX(-30px);
     `,
   })};
@@ -22,5 +23,5 @@ export const ImageDestaque = styled.img`
 export const Image = styled.img`
   height: 177px;
   width: 248px;
-  object-fit: contain;
+  object-fit: cover;
 `;
