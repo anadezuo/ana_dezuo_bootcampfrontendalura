@@ -1,35 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Capa from '../src/components/Capa';
-import Cabecalho from '../src/components/Cabecalho';
-import Projetos from '../src/components/Projetos';
-import Footer from '../src/components/Footer';
+import websitePageHOC from '../src/components/wrappers/WebsitePageWrapper/hoc';
 import Box from '../src/components/foundation/layout/Box';
+import Capa from '../src/components/Capa';
+import Projetos from '../src/components/Projetos';
 
-export default function Home({
-  theme, setTheme, isThemeDark, setIsThemeDark,
-}) {
+function HomeScreen() {
   return (
-    <Box width="100vw" height="100vh">
-      <Cabecalho
-        setTheme={setTheme}
-        isThemeDark={isThemeDark}
-        setIsThemeDark={setIsThemeDark}
-      />
-      <Capa theme={theme} />
-      <Projetos theme={theme} />
-      <Footer />
+    <Box width="100%" height="100%">
+      <Capa />
+      <Projetos />
     </Box>
   );
 }
 
-Home.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
-  setTheme: PropTypes.func.isRequired,
-  isThemeDark: PropTypes.bool,
-  setIsThemeDark: PropTypes.func.isRequired,
-};
-
-Home.defaultProps = {
-  isThemeDark: false,
-};
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: { headTitle: 'Home' },
+  },
+});

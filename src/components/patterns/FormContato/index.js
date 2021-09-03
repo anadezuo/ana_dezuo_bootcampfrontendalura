@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useContext, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import Button from '../../commons/Buttons/Button';
 import TextField from '../../forms/TextField';
@@ -174,7 +174,9 @@ function FormContent() {
   );
 }
 
-export default function FormContato({ theme, propsModal, setModal }) {
+export default function FormContato({ propsModal, setModal }) {
+  const themeContext = useContext(ThemeContext);
+
   return (
     <Grid.Row
       marginLeft={0}
@@ -194,7 +196,7 @@ export default function FormContato({ theme, propsModal, setModal }) {
           flexDirection="column"
           justifyContent="center"
           // eslint-disable-next-line react/prop-types
-          backgroundColor={theme.colors.background.main.color}
+          backgroundColor={themeContext.colors.background.main.color}
           alignItems="center"
           flex={1}
           padding={{ xs: '16px', md: '85px' }}
@@ -218,7 +220,6 @@ export default function FormContato({ theme, propsModal, setModal }) {
 }
 
 FormContato.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
   propsModal: PropTypes.shape({}).isRequired,
   setModal: PropTypes.func.isRequired,
 };

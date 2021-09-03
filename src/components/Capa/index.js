@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import Text from '../foundation/Text';
 import CapaWrapper from './styles';
-import GithubIcon from '../commons/Icons/GithubIcon';
-import TwitterIcon from '../commons/Icons/TwitterIcon';
-import MediumIcon from '../commons/Icons/MediumIcon';
+import GithubIcon from '../../assets/icons/GithubIcon';
+import TwitterIcon from '../../assets/icons/TwitterIcon';
+import MediumIcon from '../../assets/icons/MediumIcon';
 import Logo from '../commons/Logo';
 
-export default function Capa({ theme }) {
-  // eslint-disable-next-line react/prop-types
-  const { color } = theme.colors.primary.main;
-  // eslint-disable-next-line react/prop-types
-  const colorContrast = theme.colors.background.main.color;
+export default function Capa() {
+  const themeContext = useContext(ThemeContext);
+
+  const { color } = themeContext.colors.primary.main;
+  const colorContrast = themeContext.colors.background.main.color;
 
   return (
     <CapaWrapper className="capa">
@@ -54,9 +54,3 @@ export default function Capa({ theme }) {
     </CapaWrapper>
   );
 }
-
-Capa.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
-};
-
-Capa.defaultProps = {};

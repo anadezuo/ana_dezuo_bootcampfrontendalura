@@ -14,7 +14,7 @@ export default function Footer() {
       <Text
         tag="p"
         variant="smallestException"
-        margin="25px"
+        margin="15px"
         color="primary.contrast"
       >
         © 2021 Ana Paula Dezuó

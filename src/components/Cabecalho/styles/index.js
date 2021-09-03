@@ -12,7 +12,7 @@ const Menu = styled.nav`
   top: 0;
 
   a {
-    padding: 16px;
+    padding: 10px;
     list-style: none;
     text-decoration: none;
     text-align: center;
