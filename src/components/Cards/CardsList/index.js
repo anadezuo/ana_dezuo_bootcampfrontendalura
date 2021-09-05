@@ -14,7 +14,7 @@ export default function CardsList({ repositores }) {
             <CardMain
               title={repo.name}
               imageUrl={repo.imageUrl}
-              link={repo.homepage || repo.htmlUrl}
+              slug={repo.slug}
               text={repo.description}
             />
           </CardListWrapper.ProjectMain>
@@ -24,7 +24,7 @@ export default function CardsList({ repositores }) {
               title={repo.name}
               description={repo.description}
               imageUrl={repo.imageUrl}
-              link={repo.homepage || repo.htmlUrl}
+              slug={repo.slug}
             />
           </CardListWrapper.ProjectList>
         )))}

@@ -5,7 +5,7 @@ import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import CardsList from '../../Cards/CardsList';
 import ButtonFormContactWrapper from '../../wrappers/ButtonFormContactWrapper';
 
-const WrapperProjetos = styled.article`
+const WrapperProjects = styled.article`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -21,16 +21,16 @@ const WrapperProjetos = styled.article`
   })}
 `;
 
-export default function ProjetosScreen({ repositores }) {
+export default function ProjectsScreen({ repositores }) {
   return (
-    <WrapperProjetos>
+    <WrapperProjects>
       <CardsList repositores={repositores} />
       <ButtonFormContactWrapper />
-    </WrapperProjetos>
+    </WrapperProjects>
   );
 }
 
-ProjetosScreen.propTypes = {
+ProjectsScreen.propTypes = {
   repositores: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,

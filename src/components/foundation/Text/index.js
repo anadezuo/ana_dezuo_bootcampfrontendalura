@@ -30,6 +30,8 @@ const TextBase = styled.span`
   ${propToStyle('margin')};
   ${propToStyle('marginTop')};
   ${propToStyle('marginBottom')};
+  ${propToStyle('marginRight')};
+  ${propToStyle('marginLeft')};
   ${(props) => hasColor(props)};
   ${(props) => hasFontFamily(props)};
 `;

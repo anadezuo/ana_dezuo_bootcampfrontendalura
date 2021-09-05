@@ -1,12 +1,12 @@
 import React from 'react';
 import websitePageHOC from '../../src/components/wrappers/WebsitePageWrapper/hoc';
-import ProjetosScreen from '../../src/components/screens/ProjetosScreen';
+import ProjectsScreen from '../../src/components/screens/ProjectsScreen';
 
-function ProjetosPage({ repositores }) {
-  return <ProjetosScreen repositores={repositores} />;
+function ProjectsPage({ repositores }) {
+  return <ProjectsScreen repositores={repositores} />;
 }
 
-export default websitePageHOC(ProjetosPage, {
+export default websitePageHOC(ProjectsPage, {
   pageWrapperProps: {
     seoProps: { headTitle: 'Projetos' },
   },
@@ -22,17 +22,23 @@ export async function getStaticProps() {
 
     response.sort((f, s) => s.stargazers_count - f.stargazers_count);
 
-    const responseData = response.map((repo) => ({
-      name: repo.name,
-      slug: repo.name,
-      description: repo.description,
-      htmlUrl: repo.html_url,
-      starsCount: repo.stargazers_count,
-      language: repo.language,
-      homepage: repo.homepage,
-      isProjectMain: false,
-      imageUrl: 'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/projetos/alurakut.png',
-    }));
+    const responseData = response.map((repo) => {
+      if (!repo.private) {
+        return {
+          name: repo.name,
+          slug: repo.name,
+          description: repo.description,
+          htmlUrl: repo.html_url,
+          starsCount: repo.stargazers_count,
+          language: repo.language,
+          homepage: repo.homepage,
+          isProjectMain: false,
+          imageUrl:
+            'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/projetos/alurakut.png',
+        };
+      }
+      return {};
+    });
 
     responseData[0].isProjectMain = true;
     return responseData;
@@ -45,4 +51,4 @@ export async function getStaticProps() {
   };
 }
 
-ProjetosPage.propTypes = ProjetosScreen.propTypes;
+ProjectsPage.propTypes = ProjectsScreen.propTypes;

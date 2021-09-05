@@ -7,7 +7,7 @@ import Button from '../../commons/Buttons/Button';
 import Text from '../../foundation/Text';
 
 export default function CardMain({
-  title, imageUrl, link, text,
+  title, imageUrl, slug, text,
 }) {
   return (
     <Box display="grid" placeItems="center" minHeight="100vh" padding="20px">
@@ -19,8 +19,8 @@ export default function CardMain({
               xs: 'paragraphXSLight',
               md: 'title2',
             }}
-            textAlign={{ xs: 'center', md: 'left' }}
             color="theme.main"
+            textAlign={{ xs: 'center', md: 'left' }}
           >
             {title}
           </Text>
@@ -37,19 +37,18 @@ export default function CardMain({
               {text}
             </Text>
             <Box display="flex" flexDirection="row" justifyContent="flex-start">
-              <a href={link} target="_blank" rel="noreferrer">
-                <Button
-                  padding="5px"
-                  marginTop="10px"
-                  marginLeft="10px"
-                  variant="theme.main"
-                  color="tertiary.main"
-                >
-                  {' '}
-                  Visitar
-                  {' '}
-                </Button>
-              </a>
+              <Button
+                href={`projetos/${slug}`}
+                padding="5px"
+                marginTop="10px"
+                marginLeft="10px"
+                variant="theme.main"
+                color="tertiary.main"
+              >
+                {' '}
+                Visitar
+                {' '}
+              </Button>
             </Box>
           </CardMainWrapper.Text>
         </CardMainWrapper.Information>
@@ -64,12 +63,13 @@ export default function CardMain({
 CardMain.propTypes = {
   title: PropTypes.string,
   imageUrl: PropTypes.string,
-  link: PropTypes.string.isRequired,
+  slug: PropTypes.string,
   text: PropTypes.string,
 };
 
 CardMain.defaultProps = {
   title: 'Projeto sem descrição',
   imageUrl: 'https://ana-portfolio.vercel.app/images/block.png',
+  slug: '',
   text: '',
 };

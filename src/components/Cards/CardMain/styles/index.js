@@ -7,9 +7,10 @@ const CardWrapper = styled.div`
 
   ${breakpointsMedia({
     xs: css`
-      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
     `,
     md: css`
       border: none;

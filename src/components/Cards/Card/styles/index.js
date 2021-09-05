@@ -38,8 +38,12 @@ const CardWrapper = styled.div`
 `;
 
 CardWrapper.Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: ${({ theme }) => theme.colors.background.main.color};
   width: 100%;
+  margin: 20px 0;
 `;
 
 export default CardWrapper;
