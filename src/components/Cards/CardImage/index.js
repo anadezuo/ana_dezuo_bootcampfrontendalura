@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ImageDestaque, Image } from './styles';
 
-export default function CardImage({ imageUrl, main }) {
+export default function CardImage({ imageUrl, isProjectMain }) {
   return (
     <>
-      {main ? (
+      {isProjectMain ? (
         <ImageDestaque src={imageUrl} alt="Imagem do projeto" />
 
       ) : (
@@ -17,10 +17,10 @@ export default function CardImage({ imageUrl, main }) {
 
 CardImage.propTypes = {
   imageUrl: PropTypes.string,
-  main: PropTypes.bool,
+  isProjectMain: PropTypes.bool,
 };
 
 CardImage.defaultProps = {
   imageUrl: 'https://ana-portfolio.vercel.app/images/block.png',
-  main: false,
+  isProjectMain: false,
 };

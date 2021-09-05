@@ -38,14 +38,18 @@ CardWrapper.Information = styled.div`
   order: 2;
 
   ${breakpointsMedia({
+    xs: css`
+      margin: 20px 0;
+    `,
     md: css`
       order: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
 
       flex-grow: 1;
-      padding: 40px;
+      padding: 0 40px;
+      height: 280px;
       background-color: ${({ theme }) => theme.colors.colorTransparency.main.color};
       box-shadow: 0px 0px 8px
         ${({ theme }) => theme.colors.secondary.main.color};

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CardMainWrapper from './styles';
 import CardImage from '../CardImage';
-import CardTitle from '../CardTitle';
-import CardText from '../CardText';
 import Box from '../../foundation/layout/Box';
 import Button from '../../commons/Buttons/Button';
+import Text from '../../foundation/Text';
 
 export default function CardMain({
   title, imageUrl, link, text,
@@ -14,9 +13,29 @@ export default function CardMain({
     <Box display="grid" placeItems="center" minHeight="100vh" padding="20px">
       <CardMainWrapper>
         <CardMainWrapper.Information>
-          <CardTitle title={title} main />
+          <Text
+            tag="h4"
+            variant={{
+              xs: 'paragraphXSLight',
+              md: 'title2',
+            }}
+            textAlign={{ xs: 'center', md: 'left' }}
+            color="theme.main"
+          >
+            {title}
+          </Text>
+
           <CardMainWrapper.Text>
-            <CardText text={text} />
+            <Text
+              tag="p"
+              variant="smallestException"
+              textAlign="left"
+              color="primary.main"
+              marginTop="10px"
+              marginBottom="10px"
+            >
+              {text}
+            </Text>
             <Box display="flex" flexDirection="row" justifyContent="flex-start">
               <a href={link} target="_blank" rel="noreferrer">
                 <Button
@@ -35,7 +54,7 @@ export default function CardMain({
           </CardMainWrapper.Text>
         </CardMainWrapper.Information>
         <CardMainWrapper.Image>
-          <CardImage imageUrl={imageUrl} main />
+          <CardImage imageUrl={imageUrl} isProjectMain />
         </CardMainWrapper.Image>
       </CardMainWrapper>
     </Box>
