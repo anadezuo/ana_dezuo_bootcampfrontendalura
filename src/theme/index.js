@@ -7,6 +7,7 @@ const fontFamily = "'Roboto Condensed', sans-serif";
 const fontFamilySmallException = "'Roboto', sans-serif";
 const transition = '200ms ease-in-out';
 const borderRadius = '5px';
+const borderRadiusTag = '50px';
 
 const styles = {
   typographyVariants,
@@ -16,6 +17,7 @@ const styles = {
   fontFamilyException,
   transition,
   borderRadius,
+  borderRadiusTag,
 };
 
 export const ThemeLight = {

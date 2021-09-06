@@ -4,20 +4,29 @@ import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   justify-content: space-around;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background.main.color};
-  border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
-  
+
   ${breakpointsMedia({
+    xs: css`
+      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
+      p {
+        display: none;
+      }
+    `,
     md: css`
+      border: none;
       margin-top: 32px;
-      width: 250px;
+      p {
+        display: flex;
+      }
     `,
   })};
 
   a {
+    text-align: center;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.primary.main.color};
 
@@ -28,9 +37,13 @@ const CardWrapper = styled.div`
   }
 `;
 
-CardWrapper.Text = styled.div`
+CardWrapper.Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: ${({ theme }) => theme.colors.background.main.color};
   width: 100%;
+  margin: 20px 0;
 `;
 
 export default CardWrapper;

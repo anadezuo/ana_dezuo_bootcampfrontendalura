@@ -11,19 +11,13 @@ const Container = styled.div`
   max-width: initial;
 
   ${breakpointsMedia({
-    sm: css`
+    xs: css`
       max-width: 576px;
     `,
     md: css`
       max-width: 768px;
       padding-right: 16px;
       padding-left: 16px;
-    `,
-    lg: css`
-      max-width: 1160px;
-    `,
-    xl: css`
-      max-width: 1222px;
     `,
   })}
 
@@ -41,16 +35,18 @@ const Row = styled.div`
   ${propToStyle('marginRight')}
   ${propToStyle('justifyContent')}
   ${propToStyle('backgroundColor')};
+  ${propToStyle('width')};
+  ${propToStyle('margin')};
 `;
 
 function createCssColumnsByValue(value) {
   return value
     ? css`
-            flex-grow: 0;
-            flex-shrink: 0;
-            flex-basis: ${(100 * value) / 12}%;
-            max-width: ${(100 * value) / 12}%;
-          `
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: ${(100 * value) / 12}%;
+      max-width: ${(100 * value) / 12}%;
+    `
     : '';
 }
 
@@ -92,12 +88,12 @@ const Col = styled.div`
   }};
 
   ${propToStyle('display')};
+  ${propToStyle('flexDirection')};
   ${propToStyle('alignItems')};
   ${propToStyle('justifyContent')};
-  ${propToStyle('flexDirection')};
   ${propToStyle('backgroundColor')};
   ${propToStyle('paddingRight')};
-  ${propToStyle('backgroundColor')};
+  ${propToStyle('marginTop')};
 
 
 `;
