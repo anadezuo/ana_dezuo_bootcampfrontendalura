@@ -8,14 +8,10 @@ export default function SobreScreen() {
       marginTop="50px"
       display="flex"
       flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
       width="100%"
       height="100%"
     >
-      <Text variant="p" color="primary.main">
-        Sobre
-      </Text>
+      <Text> Página Sobre </Text>
     </Box>
   );
 }

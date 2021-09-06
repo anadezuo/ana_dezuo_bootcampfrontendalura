@@ -22,6 +22,12 @@ export const ImageDestaque = styled.img`
 
 export const Image = styled.img`
   height: 177px;
-  width: 248px;
+  width: auto;
   object-fit: cover;
+  transition: transform .2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  
 `;

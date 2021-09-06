@@ -6,7 +6,7 @@ const Menu = styled.nav`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
-  //z-index: 15;
+  z-index: 15;
   position: fixed;
   width: 100vw;
   top: 0;
