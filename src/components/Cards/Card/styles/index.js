@@ -18,7 +18,7 @@ const CardWrapper = styled.div`
     `,
     md: css`
       border: none;
-      margin-top: 32px;
+      margin-top: 30px;
       p {
         display: flex;
       }

@@ -20,8 +20,9 @@ export default function Card({
         </Text>
         <Text
           tag="p"
-          variant={{ xs: 'paragraphXSLight', md: 'paragraphLight' }}
+          variant={{ xs: 'smallestExceptionXS', md: 'smallestException' }}
           textAlign="left"
+          color="primary.main"
         >
           {description}
         </Text>

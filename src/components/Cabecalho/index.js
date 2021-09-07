@@ -3,6 +3,7 @@ import Menu from './styles';
 import Text from '../foundation/Text';
 import { ButtonTheme, SwitcherTheme } from '../../theme/SwitcherTheme';
 import { useTheme } from '../../hooks/useTheme';
+import LogoDescription from '../commons/Logo/LogoDescription';
 
 export default function Cabecalho() {
   const { toggleTheme } = useTheme();
@@ -14,6 +15,11 @@ export default function Cabecalho() {
   return (
     <Menu>
       <Menu.Logo>
+        <LogoDescription
+          height={{ xs: '50px', md: '60px' }}
+        />
+      </Menu.Logo>
+      <Menu.Navbar>
         <Text
           tag="a"
           variant={{ xs: 'paragraphXS', md: 'paragraph' }}
@@ -22,8 +28,6 @@ export default function Cabecalho() {
         >
           Home
         </Text>
-      </Menu.Logo>
-      <Menu.Navbar>
         <Text
           tag="a"
           variant={{ xs: 'paragraphXS', md: 'paragraph' }}
@@ -40,7 +44,7 @@ export default function Cabecalho() {
         >
           Sobre
         </Text>
-        <ButtonTheme onClick={handleToggleTheme}>
+        <ButtonTheme onClick={handleToggleTheme} alt="Botão de escolha de tema">
           <SwitcherTheme />
         </ButtonTheme>
       </Menu.Navbar>

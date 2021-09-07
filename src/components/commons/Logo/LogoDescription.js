@@ -9,32 +9,31 @@ export const ImageLogo = styled.img`
   ${propToStyle('width')}
 `;
 
-export default function Logo({ height, width }) {
+export default function LogoWithDescription({ height, width }) {
   const themeContext = useContext(ThemeContext);
 
   const urlLogo = themeContext.isDark
-    ? 'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/logo/logo_dark.png'
-    : 'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/logo/logo_light.png';
+    ? 'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/logo/logo_descricao_dark.png'
+    : 'https://ana-dezuo-bootcamp-frontend-alura.vercel.app/images/logo/logo_descricao_light.png';
 
   return (
     <Box display="flex" justifyContent="center">
-
       <ImageLogo
         height={height}
         width={width}
         src={urlLogo}
-        alt="Imagem com a letra A."
+        alt="Imagem com a letra A com descrição de desenvolvedora front-end, web e mobile."
       />
     </Box>
   );
 }
 
-Logo.propTypes = {
+LogoWithDescription.propTypes = {
   height: PropTypes.shape({ xs: PropTypes.string, md: PropTypes.string }),
   width: PropTypes.shape({ xs: PropTypes.string, md: PropTypes.string }),
 };
 
-Logo.defaultProps = {
+LogoWithDescription.defaultProps = {
   height: { xs: '25px', md: '50px' },
   width: { xs: 'auto', md: 'auto' },
 };

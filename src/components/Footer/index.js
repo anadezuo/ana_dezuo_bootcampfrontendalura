@@ -5,7 +5,7 @@ import Text from '../foundation/Text';
 const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.background.contrast.color};
+  background-color: ${({ theme }) => theme.colors.colorTransparency.contrast.color};
 `;
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
         margin="15px"
         color="primary.contrast"
       >
-        © 2021 Ana Paula Dezuó
+        © Copyright 2021.
       </Text>
     </FooterWrapper>
   );

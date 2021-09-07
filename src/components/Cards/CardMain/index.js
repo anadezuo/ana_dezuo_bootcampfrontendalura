@@ -15,10 +15,7 @@ export default function CardMain({
         <CardMainWrapper.Information>
           <Text
             tag="h4"
-            variant={{
-              xs: 'paragraphXSLight',
-              md: 'title2',
-            }}
+            variant={{ xs: 'paragraphXSLight', md: 'title2' }}
             color="theme.main"
             textAlign={{ xs: 'center', md: 'left' }}
           >
@@ -39,7 +36,6 @@ export default function CardMain({
             <Box display="flex" flexDirection="row" justifyContent="flex-start">
               <Button
                 href={`projetos/${slug}`}
-                padding="5px"
                 marginTop="10px"
                 marginLeft="10px"
                 variant="theme.main"
