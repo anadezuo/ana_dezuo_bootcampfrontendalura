@@ -1,8 +1,8 @@
 // apenas um redirect de exemplo
 module.exports = [
   {
-    source: '/projeto',
-    destination: '/projeto/',
+    source: '/projetos',
+    destination: '/projetos/',
     permanent: true,
   },
 ];
