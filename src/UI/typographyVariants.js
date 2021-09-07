@@ -1,75 +1,95 @@
+const paragraphWeight = '20px';
+const paragraphWeightXS = '16px';
+
 const typographyVariants = {
-  // [title] - Fira Sans Condensed
+  // [Title]
   title: {
-    fontSize: '48px',
+    fontSize: '60px',
     fontWeight: '400',
-    lineHeight: 1.25, // 125%
-  },
-  title2: {
-    fontSize: '39px',
-    fontWeight: '400',
-    lineHeight: 1.25, // 125%
-  },
-  title2Light: {
-    fontSize: '30px',
-    fontWeight: '300',
     lineHeight: 1.25, // 125%
   },
   titleXS: {
-    fontSize: '39px',
-    fontWeight: '400',
-    lineHeight: 1.25, // 125%
-  },
-  titleXS2: {
     fontSize: '31px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
-  titleXS2Light: {
-    fontSize: '26px',
-    fontWeight: '300',
-    lineHeight: 1.25, // 125%
-  },
-  // [subTitle]
-  subTitle: {
-    fontSize: '39px',
-    fontWeight: '300',
-    lineHeight: 1.25, // 125%
-  },
-  // [paragraph]
-  paragraph: {
-    fontSize: '16px',
+
+  title2: {
+    fontSize: '41px',
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
-  paragraphLight: {
+  title2XS: {
+    fontSize: '25px',
+    fontWeight: '400',
+    lineHeight: 1.25, // 125%
+  },
+
+  title2Light: {
+    fontSize: '41px',
+    fontWeight: '300',
+    lineHeight: 1.25, // 125%
+  },
+  title2XSLight: {
+    fontSize: '25px',
+    fontWeight: '300',
+    lineHeight: 1.25, // 125%
+  },
+
+  // [subTitle]
+  subTitle: {
+    fontSize: '25px',
+    fontWeight: '300',
+    lineHeight: 1.25, // 125%
+  },
+  subTitleXS: {
     fontSize: '16px',
     fontWeight: '300',
     lineHeight: 1.25, // 125%
   },
-  paragraphBold: {
-    fontSize: '16px',
-    fontWeight: '700',
+
+  // [paragraph]
+  paragraph: {
+    fontSize: paragraphWeight,
+    fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
   paragraphXS: {
-    fontSize: '16px',
+    fontSize: paragraphWeightXS,
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
-  paragraphXSLight: {
-    fontSize: '16px',
+
+  paragraphLight: {
+    fontSize: paragraphWeight,
     fontWeight: '300',
     lineHeight: 1.25, // 125%
   },
+  paragraphXSLight: {
+    fontSize: paragraphWeightXS,
+    fontWeight: '300',
+    lineHeight: 1.25, // 125%
+  },
+
   paragraphXSBold: {
-    fontSize: '16px',
+    fontSize: paragraphWeight,
     fontWeight: '700',
     lineHeight: 1.25, // 125%
   },
+  paragraphBold: {
+    fontSize: paragraphWeightXS,
+    fontWeight: '700',
+    lineHeight: 1.25, // 125%
+  },
+
   // [smallestException]
   smallestException: {
-    fontSize: '16px',
+    fontSize: '14px',
+    fontWeight: '400',
+    lineHeight: 1, // 100%
+  },
+  smallestExceptionXS: {
+    fontSize: '12px',
     fontWeight: '400',
     lineHeight: 1, // 100%
   },
