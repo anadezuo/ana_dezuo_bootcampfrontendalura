@@ -23,6 +23,7 @@ const AboutWrapper = styled.div`
 `;
 
 AboutWrapper.Image = styled.div`
+  z-index: 2;
   img {
     border-radius: 25%;
     margin: 10px;
@@ -37,9 +38,50 @@ AboutWrapper.Image = styled.div`
         margin: 100px;
         height: 270px;
         width: 270px;
+        transform: translateX(-50px);
       `,
   })}
   }
+`;
+
+AboutWrapper.CubeUp = styled.div`
+  z-index: 1;
+  border: 3px solid
+    ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+  border-radius: 25%;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  transform: translate(-60px, 40px);
+
+  ${breakpointsMedia({
+    md: css`
+      padding: 10px;
+      height: 100px;
+      width: 100px;
+      transform: translate(120px, -130px);
+    `,
+  })}
+`;
+
+AboutWrapper.CubeDown = styled.div`
+  z-index: 1;
+  border: 10px solid
+    ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+  border-radius: 25%;
+  padding: 10px;
+  height: 65px;
+  width: 65px;
+  transform: translate(60px, -50px);
+
+  ${breakpointsMedia({
+    md: css`
+      padding: 10px;
+      height: 120px;
+      width: 120px;
+      transform: translate(-210px, 130px);
+    `,
+  })}
 `;
 
 AboutWrapper.Text = styled.div`
@@ -48,9 +90,11 @@ AboutWrapper.Text = styled.div`
   flex-direction: column;
   width: auto;
 
+
   ${breakpointsMedia({
     md: css`
       width: 600px;
+      transform: translateX(-110px);
     `,
   })}
 `;
@@ -69,12 +113,14 @@ export default function AboutScreen() {
   const { color } = themeContext.colors.primary.main;
   return (
     <AboutWrapper>
+      <AboutWrapper.CubeUp />
       <AboutWrapper.Image>
         <img
           src="https://avatars.githubusercontent.com/u/43011663?v=4"
           alt="Foto de Ana Paula Dezuó"
         />
       </AboutWrapper.Image>
+      <AboutWrapper.CubeDown />
 
       <AboutWrapper.Text>
         <Text
@@ -97,9 +143,9 @@ export default function AboutScreen() {
           desde 2013 atuando como desenvolvedora de software no mercado.
           <br />
           <br />
-          Durante minha trajetória, está como maior parte a manutenção de um ERP,
-          projetos de performance em bancos relacionais e NoSQL, e um aplicativo
-          de captura de pedidos realizado em Flutter.
+          Durante minha trajetória, está como maior parte a manutenção de um
+          ERP, projetos de performance em bancos relacionais e NoSQL, e um
+          aplicativo de captura de pedidos realizado em Flutter.
           <br />
           <br />
           Atualmente sou uma desenvolvedora Front-End, conhecendo um pouco mais
