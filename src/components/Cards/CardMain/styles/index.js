@@ -7,9 +7,10 @@ const CardWrapper = styled.div`
 
   ${breakpointsMedia({
     xs: css`
-      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
     `,
     md: css`
       border: none;
@@ -38,14 +39,18 @@ CardWrapper.Information = styled.div`
   order: 2;
 
   ${breakpointsMedia({
+    xs: css`
+      margin: 20px 0;
+    `,
     md: css`
       order: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
 
       flex-grow: 1;
-      padding: 40px;
+      padding: 0 40px;
+      height: 280px;
       background-color: ${({ theme }) => theme.colors.colorTransparency.main.color};
       box-shadow: 0px 0px 8px
         ${({ theme }) => theme.colors.secondary.main.color};
@@ -55,12 +60,23 @@ CardWrapper.Information = styled.div`
   })};
 `;
 
-CardWrapper.Image = styled.div`
+CardWrapper.Image = styled.img`
   order: 1;
+  flex-grow: 2;
+  justify-content: center;
+  height: 177px;
+  width: auto;
+  object-fit: cover;
 
   ${breakpointsMedia({
     md: css`
       order: 2;
+      height: 330px;
+      width: auto;
+      padding: 15px;
+      border: 5px solid
+        ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+      transform: translateX(-30px);
     `,
   })}
 `;

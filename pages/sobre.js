@@ -1,7 +1,12 @@
+import React from 'react';
 import websitePageHOC from '../src/components/wrappers/WebsitePageWrapper/hoc';
-import SobreScreen from '../src/components/screens/SobreScreen';
+import AboutScreen from '../src/components/screens/AboutScreen';
 
-export default websitePageHOC(SobreScreen, {
+function AboutPage() {
+  return <AboutScreen />;
+}
+
+export default websitePageHOC(AboutPage, {
   pageWrapperProps: {
     seoProps: { headTitle: 'Sobre' },
   },

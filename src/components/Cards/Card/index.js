@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardImage from '../CardImage';
-import CardTitle from '../CardTitle';
+import Text from '../../foundation/Text';
 import CardWrapper from './styles';
 
-export default function Card({ title, imageUrl, link }) {
+export default function Card({ title, imageUrl, slug }) {
   return (
     <CardWrapper>
-      <CardImage imageUrl={imageUrl} />
-      <CardWrapper.Text>
-        <a href={link} target="_blank" rel="noreferrer">
-          <CardTitle title={title} main={false} />
-        </a>
-      </CardWrapper.Text>
+      <CardWrapper.Image
+        src={imageUrl}
+        alt="Imagem do projeto"
+      />
+      <CardWrapper.Title>
+        <Text
+          className="teste"
+          tag="h4"
+          href={`projetos/${slug}`}
+          variant={{ xs: 'paragraphXSLight', md: 'title2Light' }}
+          color="primary.contrast"
+        >
+          {title}
+        </Text>
+      </CardWrapper.Title>
     </CardWrapper>
   );
 }
@@ -20,10 +28,11 @@ export default function Card({ title, imageUrl, link }) {
 Card.propTypes = {
   title: PropTypes.string,
   imageUrl: PropTypes.string,
-  link: PropTypes.string.isRequired,
+  slug: PropTypes.string,
 };
 
 Card.defaultProps = {
-  title: 'Projeto sem descrição',
-  imageUrl: 'https://ana-portfolio.vercel.app/images/block.png',
+  title: 'Projeto sem titúlo',
+  imageUrl: '',
+  slug: '',
 };
