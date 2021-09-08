@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardMainWrapper from './styles';
-import CardImage from '../CardImage';
 import Box from '../../foundation/layout/Box';
 import Button from '../../commons/Buttons/Button';
 import Text from '../../foundation/Text';
@@ -48,9 +47,7 @@ export default function CardMain({
             </Box>
           </CardMainWrapper.Text>
         </CardMainWrapper.Information>
-        <CardMainWrapper.Image>
-          <CardImage imageUrl={imageUrl} isProjectMain />
-        </CardMainWrapper.Image>
+        <CardMainWrapper.Image src={imageUrl} alt="Imagem do projeto" />
       </CardMainWrapper>
     </Box>
   );

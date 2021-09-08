@@ -60,12 +60,23 @@ CardWrapper.Information = styled.div`
   })};
 `;
 
-CardWrapper.Image = styled.div`
+CardWrapper.Image = styled.img`
   order: 1;
+  flex-grow: 2;
+  justify-content: center;
+  height: 177px;
+  width: auto;
+  object-fit: cover;
 
   ${breakpointsMedia({
     md: css`
       order: 2;
+      height: 330px;
+      width: auto;
+      padding: 15px;
+      border: 5px solid
+        ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+      transform: translateX(-30px);
     `,
   })}
 `;

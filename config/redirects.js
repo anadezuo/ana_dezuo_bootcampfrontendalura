@@ -1,4 +1,5 @@
 // apenas um redirect de exemplo
+/*
 module.exports = [
   {
     source: '/projetos',
@@ -6,3 +7,4 @@ module.exports = [
     permanent: true,
   },
 ];
+*/

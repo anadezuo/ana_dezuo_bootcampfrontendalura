@@ -133,7 +133,7 @@ export default function AboutScreen() {
         </Text>
 
         <Text
-          tag="h2"
+          tag="p"
           variant={{ xs: 'paragraphXSLight', md: 'paragraphLight' }}
           color="primary.main"
         >

@@ -14,5 +14,8 @@ function HomeScreen() {
 export default websitePageHOC(HomeScreen, {
   pageWrapperProps: {
     seoProps: { headTitle: 'Home' },
+    footerProps: {
+      display: false,
+    },
   },
 });
