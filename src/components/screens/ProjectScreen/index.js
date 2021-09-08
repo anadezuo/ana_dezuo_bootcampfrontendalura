@@ -47,6 +47,7 @@ export default function ProjectScreen({ project }) {
             Visite o site em
           </Text>
           <Text
+            tag="p"
             href={project.homepage}
             variant={{ xs: 'paragraphXS', md: 'paragraph' }}
             color="primary.main"
@@ -63,6 +64,7 @@ export default function ProjectScreen({ project }) {
             Código fonte
           </Text>
           <Text
+            tag="p"
             href={project.htmlUrl}
             variant={{ xs: 'paragraphXS', md: 'paragraph' }}
             color="primary.main"
@@ -131,18 +133,3 @@ ProjectScreen.defaultProps = {
     imageUrl: '',
   }),
 };
-
-/*
-
-<Box
-      display="flex"
-      flexDirection="column"
-      flex="1"
-      justifyContent="center"
-      alignItems="center"
-      marginTop="50px"
-      // width="100%"
-      // height="100%"
-    > */
-
-// {`isProjectMain: ${project.isProjectMain} `}

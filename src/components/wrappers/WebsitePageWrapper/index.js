@@ -6,14 +6,18 @@ import SEO from '../../../core/Head/SEO';
 import Footer from '../../Footer';
 import Cabecalho from '../../Cabecalho';
 
-export default function WebsitePageWrapper({ children, seoProps }) {
+export default function WebsitePageWrapper({
+  children,
+  seoProps,
+  footerProps,
+}) {
   return (
     <>
       <SEO {...seoProps} />
       <Box display="flex" flexDirection="column" flex="1">
         <Cabecalho />
         {children}
-        <Footer />
+        {footerProps.display && <Footer />}
       </Box>
     </>
   );
@@ -21,11 +25,17 @@ export default function WebsitePageWrapper({ children, seoProps }) {
 
 WebsitePageWrapper.defaultProps = {
   seoProps: {},
+  footerProps: {
+    display: true,
+  },
 };
 
 WebsitePageWrapper.propTypes = {
   seoProps: PropTypes.shape({
     headTitle: PropTypes.string,
+  }),
+  footerProps: PropTypes.shape({
+    display: PropTypes.bool,
   }),
   children: PropTypes.node.isRequired,
 };
