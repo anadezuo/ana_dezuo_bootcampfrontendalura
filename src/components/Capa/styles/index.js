@@ -8,13 +8,4 @@ const CapaWrapper = styled.div`
   align-items: center;
 `;
 
-CapaWrapper.Icons = styled.div`
-  display: flex;
-  flex-direction: row;
-  
-  a {
-    margin: 8px;
-  }
-`;
-
 export default CapaWrapper;

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import CardsList from '../../Cards/CardsList';
 import ButtonFormContactWrapper from '../../wrappers/ButtonFormContactWrapper';
+import Text from '../../foundation/Text';
 
 const WrapperProjects = styled.article`
   display: flex;
@@ -12,11 +13,13 @@ const WrapperProjects = styled.article`
 
   ${breakpointsMedia({
     xs: css`
-      margin: 35px 0;
+      margin-top: 80px;
+      margin-bottom: 20px;
     `,
     md: css`
       flex-wrap: wrap;
-      margin: 45px 0;
+      margin-top: 100px;
+      margin-bottom: 25px;
     `,
   })}
 `;
@@ -24,6 +27,14 @@ const WrapperProjects = styled.article`
 export default function ProjectsScreen({ repositores }) {
   return (
     <WrapperProjects>
+      <Text
+        tag="h2"
+        variant={{ xs: 'title2XS', md: 'title2' }}
+        color="primary.main"
+        marginBottom="20px"
+      >
+        Portfólio
+      </Text>
       <CardsList repositores={repositores} />
       <ButtonFormContactWrapper />
     </WrapperProjects>

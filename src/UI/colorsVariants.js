@@ -53,6 +53,9 @@ export const colorsLight = {
     main: {
       color: 'rgba(255, 255, 255, 0.8)',
     },
+    contrast: {
+      color: 'rgba(21, 21, 21, 0.8)',
+    },
   },
   ...colorsTheme,
 };
@@ -95,6 +98,9 @@ export const colorsDark = {
   colorTransparency: {
     main: {
       color: 'rgba(21, 21, 21, 0.8)',
+    },
+    contrast: {
+      color: 'rgba(21, 21, 21, 0.9)',
     },
   },
   ...colorsTheme,

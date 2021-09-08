@@ -4,7 +4,6 @@ import Card from '../Card';
 import CardMain from '../CardMain';
 import CardListWrapper from './styles';
 
-// muda para receber com provider
 export default function CardsList({ repositores }) {
   return (
     <CardListWrapper>
@@ -22,7 +21,6 @@ export default function CardsList({ repositores }) {
           <CardListWrapper.ProjectList key={repo.slug}>
             <Card
               title={repo.name}
-              description={repo.description}
               imageUrl={repo.imageUrl}
               slug={repo.slug}
             />
