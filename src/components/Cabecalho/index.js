@@ -24,7 +24,6 @@ export default function Cabecalho() {
           tag="a"
           variant={{ xs: 'paragraphXS', md: 'paragraph' }}
           href="/"
-          color="black"
         >
           Home
         </Text>
@@ -32,7 +31,6 @@ export default function Cabecalho() {
           tag="a"
           variant={{ xs: 'paragraphXS', md: 'paragraph' }}
           href="/projetos"
-          color="primary.contrast"
         >
           Projetos
         </Text>
@@ -40,7 +38,6 @@ export default function Cabecalho() {
           tag="a"
           variant={{ xs: 'paragraphXS', md: 'paragraph' }}
           href="/sobre"
-          color="primary.contrast"
         >
           Sobre
         </Text>

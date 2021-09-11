@@ -10,7 +10,7 @@ const CardWrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
+      border: 1px solid ${({ theme }) => theme.colors.primary.main.color};
     `,
     md: css`
       border: none;
@@ -50,10 +50,10 @@ CardWrapper.Information = styled.div`
 
       flex-grow: 1;
       padding: 0 40px;
-      height: 280px;
+      height: 260px;
       background-color: ${({ theme }) => theme.colors.colorTransparency.main.color};
       box-shadow: 0px 0px 8px
-        ${({ theme }) => theme.colors.secondary.main.color};
+        ${({ theme }) => theme.colors.primary.main.color};
       transform: translateX(50px);
       z-index: 2;
     `,
@@ -75,7 +75,7 @@ CardWrapper.Image = styled.img`
       width: auto;
       padding: 15px;
       border: 5px solid
-        ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+        ${({ theme }) => theme.colors.theme.primary.color};
       transform: translateX(-30px);
     `,
   })}
