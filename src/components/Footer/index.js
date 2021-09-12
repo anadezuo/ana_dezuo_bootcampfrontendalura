@@ -5,7 +5,7 @@ import Text from '../foundation/Text';
 const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.colorTransparency.contrast.color};
+  background-color: ${({ theme }) => theme.colors.colorTransparency.main.color};
 `;
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
         tag="p"
         variant="smallestException"
         margin="15px"
-        color="primary.contrast"
+        color="primary.main"
       >
         © Copyright 2021.
       </Text>

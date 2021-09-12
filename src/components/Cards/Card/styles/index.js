@@ -9,10 +9,10 @@ const CardWrapper = styled.div`
 
   ${breakpointsMedia({
     xs: css`
-      border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
+      border: 1px solid ${({ theme }) => theme.colors.primary.main.color};
     `,
     md: css`
-      background-color: ${({ theme }) => theme.colors.theme.main.color};
+      background-color: ${({ theme }) => theme.colors.theme.primary.color};
       border: none;
       margin-top: 30px;
       position: relative;
@@ -41,7 +41,7 @@ CardWrapper.Title = styled.div`
       a{
         text-align: center;
         text-decoration: none;
-        color: ${({ theme }) => theme.colors.primary.main.color};
+        color: ${({ theme }) => theme.colors.primary.contrast.color};
       }
 
     `,
@@ -60,7 +60,7 @@ CardWrapper.Title = styled.div`
       }
 
       &:hover {
-        color: ${({ theme }) => theme.colors.theme.main.color};
+        color: ${({ theme }) => theme.colors.theme.primary.color};
       }
     }
     `,

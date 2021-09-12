@@ -145,8 +145,8 @@ function FormContent() {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
-          variant={isActiveButtonContato ? 'primary.main' : 'theme.main'}
-          color={isActiveButtonContato ? 'tertiary.contrast' : 'tertiary.main'}
+          variant={isActiveButtonContato ? 'primary.main' : 'theme.primary'}
+          color={isActiveButtonContato ? 'buttonText.contrast' : 'buttonText.main'}
           type="submit"
           disabled={isActiveButtonContato}
         >

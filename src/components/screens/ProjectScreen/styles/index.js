@@ -17,7 +17,7 @@ export const ProjectWrapper = styled.article`
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.theme.main.color};
+      color: ${({ theme }) => theme.colors.theme.primary.color};
     }
   }
 `;
@@ -47,7 +47,7 @@ export const Tag = styled.div`
 
   padding: 10px;
   color: ${({ theme }) => theme.colors.primary.main.color};
-  background-color: ${({ theme }) => theme.colors.theme.main.color};
+  background-color: ${({ theme }) => theme.colors.theme.primary.color};
   border-radius: ${({ theme }) => theme.borderRadiusTag};
 `;
 
@@ -59,7 +59,7 @@ export const ImageDestaque = styled.img`
 
   padding: 15px;
   border: 5px solid
-    ${({ theme }) => theme.colors.theme.colorTransparency.main.color};
+    ${({ theme }) => theme.colors.theme.colorTransparency.primary.color};
 
   ${breakpointsMedia({
     md: css`
