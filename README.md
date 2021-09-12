@@ -74,7 +74,7 @@ Após ferramentas instaladas, executar os comandos abaixo:
 ```bash
 
 # Clone este repositório
-$ gh repo clone anadezuo/Ana_Dezuo_BootcampFrontendAlura
+$ git clone https://github.com/anadezuo/Ana_Dezuo_BootcampFrontendAlura.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd Ana_Dezuo_BootcampFrontendAlura
