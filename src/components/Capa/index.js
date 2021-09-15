@@ -17,6 +17,7 @@ export default function Capa() {
           Olá, eu sou a
         </Text>
         <Text
+          id="nome-perfil"
           tag="h2"
           variant={{ xs: 'titleXS', md: 'title' }}
           color="theme.primary"

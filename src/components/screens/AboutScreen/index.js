@@ -65,6 +65,7 @@ export default function AboutScreen() {
           alignItems="center"
           marginLeft="20px"
           marginRight="20px"
+          height="100vh"
         >
           <Text
             tag="h2"
