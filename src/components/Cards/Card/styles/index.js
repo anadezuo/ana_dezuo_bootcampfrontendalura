@@ -41,7 +41,7 @@ CardWrapper.Title = styled.div`
       a{
         text-align: center;
         text-decoration: none;
-        color: ${({ theme }) => theme.colors.primary.contrast.color};
+        color: ${({ theme }) => theme.colors.primary.main.color};
       }
 
     `,
