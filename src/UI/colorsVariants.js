@@ -1,14 +1,17 @@
 const colorsTheme = {
   theme: {
-    main: {
-      color: '#fbc02d',
+    primary: {
+      color: '#69D1D1',
     },
-    contrast: {
-      color: '#000',
+    secondary: {
+      color: '#FFDFCC',
     },
     colorTransparency: {
-      main: {
-        color: 'rgba(251,192, 45, 0.3)',
+      primary: {
+        color: 'rgba(105, 209, 209, 0.3)',
+      },
+      secondary: {
+        color: 'rgba(255, 223, 204, 0.3)',
       },
     },
   },
@@ -17,26 +20,10 @@ const colorsTheme = {
 export const colorsLight = {
   background: {
     main: {
-      color: '#fff',
-    },
-    contrast: {
-      color: '#212121',
+      color: '#FFF',
     },
   },
   primary: {
-    main: {
-      color: '#212121',
-    },
-    contrast: {
-      color: '#F2F2F2',
-    },
-  },
-  secondary: {
-    main: {
-      color: '#424242',
-    },
-  },
-  tertiary: {
     main: {
       color: '#212121',
     },
@@ -53,9 +40,6 @@ export const colorsLight = {
     main: {
       color: 'rgba(255, 255, 255, 0.8)',
     },
-    contrast: {
-      color: 'rgba(21, 21, 21, 0.8)',
-    },
   },
   ...colorsTheme,
 };
@@ -66,23 +50,10 @@ export const colorsDark = {
       color: '#212121',
     },
     contrast: {
-      color: '#000',
+      color: '#FFF',
     },
   },
   primary: {
-    main: {
-      color: '#F2F2F2',
-    },
-    contrast: {
-      color: '#F2F2F2',
-    },
-  },
-  secondary: {
-    main: {
-      color: '#F2F2F2',
-    },
-  },
-  tertiary: {
     main: {
       color: '#F2F2F2',
     },
@@ -98,9 +69,6 @@ export const colorsDark = {
   colorTransparency: {
     main: {
       color: 'rgba(21, 21, 21, 0.8)',
-    },
-    contrast: {
-      color: 'rgba(21, 21, 21, 0.9)',
     },
   },
   ...colorsTheme,

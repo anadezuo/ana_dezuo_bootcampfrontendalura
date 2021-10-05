@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Menu = styled.nav`
-  background-color: ${({ theme }) => theme.colors.colorTransparency.contrast.color};
+  background-color: ${({ theme }) => theme.colors.colorTransparency.main.color};
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -10,6 +10,19 @@ const Menu = styled.nav`
   position: fixed;
   width: 100vw;
   top: 0;
+`;
+
+Menu.Logo = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+`;
+
+Menu.Navbar = styled.div`
+  margin-right: 30px;
+  flex-flow: row nowrap;
+  display: flex;
+  align-items: center;
 
   a {
     padding: 0 20px;
@@ -18,36 +31,12 @@ const Menu = styled.nav`
     text-align: center;
     display: block;
     transition: ${({ theme }) => theme.transition};
-  }
-`;
-
-Menu.Logo = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 30px;
-
-  a {
+    border: none;
     color: ${({ theme }) => theme.colors.primary.main.color};
     &:hover,
     &:focus {
       font-weight: 700;
-      color: ${({ theme }) => theme.colors.theme.contrast.color};
-    }
-  }
-`;
-
-Menu.Navbar = styled.div`
-  margin-right: 30px;
-  flex-flow: row nowrap;
-  display: flex;
-  align-items: center;
-  a {
-    border: none;
-    color: ${({ theme }) => theme.colors.primary.contrast.color};
-    &:hover,
-    &:focus {
-      font-weight: 700;
-      color: ${({ theme }) => theme.colors.theme.main.color};
+      color: ${({ theme }) => theme.colors.theme.primary.color};
     }
   }
 `;
