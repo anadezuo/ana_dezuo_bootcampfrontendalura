@@ -20,64 +20,17 @@ export default function ProjectScreen({ project }) {
         {`Projeto ${project.name} `}
       </Text>
       <ProjectWrapper.Project>
-        <ImageDestaque src={project.imageUrl} isProjectMain alt={`Imagem do projeto ${project.name}`} />
-
         <Grid.Col
-          value={{ md: 6 }}
+          offset={{ md: 1 }}
           display="flex"
           flexDirection="column"
-          flex="1"
-          justifyContent="center"
-          alignItems="flex-start"
+          alignItems="center"
         >
-          <Text
-            tag="p"
-            variant={{ xs: 'paragraphXS', md: 'paragraph' }}
-            color="primary.main"
-            marginBottom={{ xs: '10px', md: '20px' }}
-          >
-            {project.description}
-          </Text>
-
-          <Text
-            tag="p"
-            variant={{ xs: 'paragraphXSBold', md: 'paragraphBold' }}
-            color="primary.main"
-          >
-            Visite o site em
-          </Text>
-          <Text
-            tag="p"
-            href={project.homepage}
-            variant={{ xs: 'paragraphXS', md: 'paragraph' }}
-            color="primary.main"
-            marginBottom={{ xs: '10px', md: '20px' }}
-          >
-            {project.homepage}
-          </Text>
-
-          <Text
-            tag="p"
-            variant={{ xs: 'paragraphXSBold', md: 'paragraphBold' }}
-            color="primary.main"
-          >
-            Código fonte
-          </Text>
-          <Text
-            tag="p"
-            href={project.htmlUrl}
-            variant={{ xs: 'paragraphXS', md: 'paragraph' }}
-            color="primary.main"
-            marginBottom={{ xs: '10px', md: '20px' }}
-          >
-            {project.htmlUrl}
-          </Text>
+          <ImageDestaque src={project.imageUrl} isProjectMain alt={`Imagem do projeto ${project.name}`} />
 
           <Grid.Row
             alignItens="center"
-            width="100%"
-            margin="10px"
-            justifyContent={{ xs: 'space-evenly', md: 'flex-end' }}
+            margin="20px"
           >
             <Tag>
               <Text
@@ -102,6 +55,59 @@ export default function ProjectScreen({ project }) {
               </Text>
             </Tag>
           </Grid.Row>
+        </Grid.Col>
+
+        <Grid.Col
+          value={{ md: 6 }}
+          display="flex"
+          flexDirection="column"
+          flex="1"
+          justifyContent="center"
+          alignItems="flex-start"
+          marginRight={{ md: '50px' }}
+        >
+          <Text
+            tag="p"
+            variant={{ xs: 'paragraphXSLight', md: 'paragraphLight' }}
+            color="primary.main"
+            marginBottom={{ xs: '10px', md: '20px' }}
+          >
+            {project.description}
+          </Text>
+
+          <Text
+            tag="p"
+            variant={{ xs: 'paragraphXSBold', md: 'paragraphBold' }}
+            color="primary.main"
+          >
+            Visite o site em
+          </Text>
+          <Text
+            tag="p"
+            href={project.homepage}
+            variant={{ xs: 'paragraphXSLight', md: 'paragraphLight' }}
+            color="primary.main"
+            marginBottom={{ xs: '10px', md: '20px' }}
+          >
+            {project.homepage}
+          </Text>
+
+          <Text
+            tag="p"
+            variant={{ xs: 'paragraphXSBold', md: 'paragraphBold' }}
+            color="primary.main"
+          >
+            Código fonte
+          </Text>
+          <Text
+            tag="p"
+            href={project.htmlUrl}
+            variant={{ xs: 'paragraphXSLight', md: 'paragraphLight' }}
+            color="primary.main"
+            marginBottom={{ xs: '10px', md: '20px' }}
+          >
+            {project.htmlUrl}
+          </Text>
         </Grid.Col>
       </ProjectWrapper.Project>
     </ProjectWrapper>

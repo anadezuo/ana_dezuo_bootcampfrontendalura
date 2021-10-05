@@ -11,6 +11,8 @@ import { isEmpty } from '../../../utils/isEmpty';
 import formListStates from '../../../information/Status/formListStates';
 import ButtonClose from '../../commons/Buttons/ButtonClose';
 import Logo from '../../commons/Logo';
+import { useForm } from '../../../hooks/forms/useForm';
+import { messageService } from '../../../services/message/messageService';
 
 const Form = styled.form`
   margin-left: 15px;
@@ -22,13 +24,12 @@ const Form = styled.form`
 `;
 
 function FormContent() {
-  const [contactInfo, setContactInfo] = useState({
+  const initialValues = {
     name: '',
     email: '',
     message: '',
-  });
+  };
 
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(
     formListStates.DEFAULT,
   );
@@ -36,62 +37,44 @@ function FormContent() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [messageSnackbar, setMessageSnackbar] = useState('');
 
-  function handleChange(event) {
-    const fieldName = event.target.getAttribute('name');
-    setContactInfo({
-      ...contactInfo,
-      [fieldName]: event.target.value,
-    });
-  }
+  const form = useForm({
+    initialValues,
+    onSubmit: (values) => {
+      form.setIsFormSubmitted(true);
+      messageService
+        .sendMessage({
+          name: values.name,
+          email: values.email,
+          message: values.message,
+        })
+        .then((respostaConvertidaEmObjeto) => {
+          setMessageSnackbar(
+            `${respostaConvertidaEmObjeto?.name} sua mensagem foi enviada com sucesso!`,
+          );
+          setOpenSnackbar(true);
+          setSubmissionStatus(formListStates.DONE);
+        })
+        .catch(() => {
+          setMessageSnackbar(
+            'Desculpe, mas sua mensagem não pode ser enviada.',
+          );
+          setOpenSnackbar(true);
+          setSubmissionStatus(formListStates.ERROR);
+        })
+        .finally(() => {
+          form.setIsFormSubmitted(false);
+        });
+    },
+  });
 
-  function handleContato(event) {
-    event.preventDefault();
-    setIsFormSubmitted(true);
-
-    const contact = {
-      name: contactInfo.name,
-      email: contactInfo.email,
-      message: contactInfo.message,
-    };
-
-    fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(contact),
-    })
-      .then((respostaDoServidor) => {
-        if (respostaDoServidor.ok) {
-          return respostaDoServidor.json();
-        }
-        throw new Error('Não foi possível cadastrar o usuário');
-      })
-      .then((respostaConvertidaEmObjeto) => {
-        setMessageSnackbar(
-          `${respostaConvertidaEmObjeto?.name} sua mensagem foi enviada com sucesso!`,
-        );
-        setOpenSnackbar(true);
-        setContactInfo({ name: '', email: '', message: '' });
-        setSubmissionStatus(formListStates.DONE);
-        // setModal(false);
-      })
-      .catch(() => {
-        setMessageSnackbar('Desculpe, mas sua mensagem não pode ser enviada.');
-        setOpenSnackbar(true);
-        setSubmissionStatus(formListStates.ERROR);
-      });
-  }
-
-  const isActiveButtonContato = isEmpty(contactInfo.name)
-    || isEmpty(contactInfo.email)
-    || isEmpty(contactInfo.message);
+  const isActiveButtonContato = isEmpty(form.name)
+    || isEmpty(form.email)
+    || isEmpty(form.message);
 
   return (
-    <Form onSubmit={handleContato}>
-      <Logo
-        height={{ xs: '100px', md: '100px' }}
-      />
+
+    <Form onSubmit={form.handleSubmit}>
+      <Logo height={{ xs: '100px', md: '100px' }} />
       <Text
         variant="title2"
         tag="h2"
@@ -119,8 +102,8 @@ function FormContent() {
           type="text"
           name="name"
           color="primary.main"
-          value={contactInfo.name}
-          onChange={handleChange} // capturadores
+          value={form.values.name}
+          onChange={form.handleChange} // capturadores
         />
       </div>
       <div>
@@ -129,8 +112,8 @@ function FormContent() {
           type="email"
           name="email"
           color="primary.main"
-          value={contactInfo.email}
-          onChange={handleChange}
+          value={form.values.email}
+          onChange={form.handleChange}
         />
       </div>
       <div>
@@ -139,20 +122,20 @@ function FormContent() {
           type="textArea"
           color="primary.main"
           name="message"
-          value={contactInfo.message}
-          onChange={handleChange}
+          value={form.values.message}
+          onChange={form.handleChange}
         />
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
           variant={isActiveButtonContato ? 'primary.main' : 'theme.primary'}
-          color={isActiveButtonContato ? 'buttonText.contrast' : 'buttonText.main'}
+          color="primary.main"
           type="submit"
           disabled={isActiveButtonContato}
         >
           Enviar mensagem
         </Button>
-        {isFormSubmitted && submissionStatus === formListStates.DONE && (
+        {submissionStatus === formListStates.DONE && (
           <SnackbarAlert
             type={TypesSnackbar.SUCCESS}
             message={messageSnackbar}
@@ -161,7 +144,7 @@ function FormContent() {
           />
         )}
 
-        {isFormSubmitted && submissionStatus === formListStates.ERROR && (
+        {submissionStatus === formListStates.ERROR && (
           <SnackbarAlert
             type={TypesSnackbar.ERROR}
             message={messageSnackbar}
@@ -178,12 +161,7 @@ export default function FormContato({ propsModal, setModal }) {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <Grid.Row
-      marginLeft={0}
-      marginRight={0}
-      flex={1}
-      justifyContent="center"
-    >
+    <Grid.Row marginLeft={0} marginRight={0} flex={1} justifyContent="center">
       <Grid.Col
         display="flex"
         paddingRight={{ md: '0' }}

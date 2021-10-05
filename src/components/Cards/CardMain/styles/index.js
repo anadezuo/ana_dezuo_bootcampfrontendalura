@@ -20,6 +20,7 @@ const CardWrapper = styled.div`
       max-width: 800px;
       max-height: 500px;
       align-items: center;
+      margin: 50px;
     `,
   })};
 `;

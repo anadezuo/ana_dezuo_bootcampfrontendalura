@@ -94,6 +94,7 @@ const Col = styled.div`
   ${propToStyle('backgroundColor')};
   ${propToStyle('paddingRight')};
   ${propToStyle('marginTop')};
+  ${propToStyle('marginRight')};
 
 
 `;
