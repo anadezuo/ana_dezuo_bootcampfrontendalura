@@ -16,7 +16,6 @@ export default function Card({ title, imageUrl, slug }) {
           tag="h4"
           href={`projetos/${slug}`}
           variant={{ xs: 'paragraphXSLight', md: 'title2Light' }}
-          color="primary.contrast"
         >
           {title}
         </Text>

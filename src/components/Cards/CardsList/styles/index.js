@@ -25,8 +25,10 @@ CardListWrapper.ProjectList = styled.div`
 
 CardListWrapper.ProjectMain = styled.div`
   order: 1;
+  background-color: ${({ theme }) => theme.colors.background.main.color};
   ${breakpointsMedia({
     md: css`
+      background-color: ${({ theme }) => theme.colors.theme.secondary.color};
       grid-column: 1 / span 2;
       display: flex;
       flex-direction: row;
@@ -34,6 +36,7 @@ CardListWrapper.ProjectMain = styled.div`
       align-items: center;
     `,
     lg: css`
+    background-color: ${({ theme }) => theme.colors.theme.secondary.color};
       grid-column: 1 / span 3;
       display: flex;
       flex-direction: row;

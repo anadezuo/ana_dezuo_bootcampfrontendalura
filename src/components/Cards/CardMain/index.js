@@ -15,7 +15,7 @@ export default function CardMain({
           <Text
             tag="h4"
             variant={{ xs: 'paragraphXSLight', md: 'title2' }}
-            color="theme.main"
+            color="theme.primary"
             textAlign={{ xs: 'center', md: 'left' }}
           >
             {title}
@@ -37,8 +37,8 @@ export default function CardMain({
                 href={`projetos/${slug}`}
                 marginTop="10px"
                 marginLeft="10px"
-                variant="theme.main"
-                color="tertiary.main"
+                variant="theme.primary"
+                color="primary.main"
               >
                 {' '}
                 Visitar

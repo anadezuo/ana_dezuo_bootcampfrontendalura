@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/next.js-fbc02d?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Framework Nextjs">
-  <img src="https://img.shields.io/badge/JavaScript-fbc02d?style=for-the-badge&logo=javascript&logoColor=white" alt="Javascript" >
-  <img src="https://img.shields.io/badge/styled--components-fbc02d?style=for-the-badge&logo=styled-components&logoColor=white" alt="Biblioteca styled components">
+  <img src="https://img.shields.io/badge/next.js-69D1D1?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Framework Nextjs">
+  <img src="https://img.shields.io/badge/JavaScript-69D1D1?style=for-the-badge&logo=javascript&logoColor=white" alt="Javascript" >
+  <img src="https://img.shields.io/badge/styled--components-FFDFCC?style=for-the-badge&logo=styled-components&logoColor=white" alt="Biblioteca styled components">
 </p>
 
 
 <h1 align="center">  
-  <img width="1036" alt="Captura de Tela 2021-08-23 às 23 43 46" src="https://user-images.githubusercontent.com/43011663/130547507-29977a09-0dbf-4376-964e-36596289e212.png">
+  <img width="1036" alt="Tela da versão web do site mostrando o nome Ana Dezuo a letra A e um menu superior" src="https://user-images.githubusercontent.com/43011663/134449226-13f55934-b835-4189-b61c-bc2d2db9d12b.png">
 </h1>
 
 <h4 align="center"> 
@@ -37,6 +37,7 @@ Além do conhecimento sobre a linguagem, também foi explicado sobre o processo 
 
 - [x] Listagem dos projetos desenvolvidos
   - [x] Destaque para um projeto principal
+  - [x] Tela de exibição de mais informações do projeto
 - [x] Tema Dark
 - [x] Formulário para envio de mensagem de contato
 
@@ -47,8 +48,8 @@ Além do conhecimento sobre a linguagem, também foi explicado sobre o processo 
 A versão mobile possui layout personalizado e responsabilidade nas fontes para melhor adaptação da leitura.
 
 <p align="center">
-   <img alt="Tela mobile da página principal" src="https://user-images.githubusercontent.com/43011663/130707742-6f1b1d8b-8f03-4aa1-8840-5bad27e6096c.png" width="200px">
-   <img alt="Tela mobile dos projetos" src="https://user-images.githubusercontent.com/43011663/130707734-5d32c6ac-630d-4e01-a018-1e3f8ace78c0.png" width="200px">
+   <img alt="Tela mobile da listagem dos projetos" src="https://user-images.githubusercontent.com/43011663/134449466-efa2337f-1825-4346-bfc6-ab675ef30990.png" width="200px">
+   <img alt="Tela mobile exibindo os dados de um projeto" src="https://user-images.githubusercontent.com/43011663/134449460-b4a85706-0041-40a7-85cb-3b05b483de2a.png" width="200px">
 </p>
 
 ---
@@ -59,7 +60,7 @@ Foram utilizadas as seguintes tecnologias:
 
 -   **[Nextjs](https://nextjs.org/)**
 -   **[Styled Components](https://styled-components.com/)**
--   **[Axios](https://github.com/axios/axios)** (futuramente)
+-   **[Cypress](https://www.cypress.io/)** (para os testes)
 
 ---
 
@@ -74,7 +75,7 @@ Após ferramentas instaladas, executar os comandos abaixo:
 ```bash
 
 # Clone este repositório
-$ gh repo clone anadezuo/Ana_Dezuo_BootcampFrontendAlura
+$ git clone https://github.com/anadezuo/Ana_Dezuo_BootcampFrontendAlura.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd Ana_Dezuo_BootcampFrontendAlura

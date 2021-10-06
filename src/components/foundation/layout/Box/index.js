@@ -16,6 +16,9 @@ const Box = styled.div`
   ${propToStyle('alignItems')};
   ${propToStyle('margin')};
   ${propToStyle('marginTop')};
-`;
+  ${propToStyle('marginLeft')};
+  ${propToStyle('marginRight')};
+  ${propToStyle('marginBottom')};
+  `;
 
 export default Box;

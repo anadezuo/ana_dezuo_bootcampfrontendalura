@@ -71,12 +71,12 @@ const typographyVariants = {
     lineHeight: 1.25, // 125%
   },
 
-  paragraphXSBold: {
+  paragraphBold: {
     fontSize: paragraphWeight,
     fontWeight: '700',
     lineHeight: 1.25, // 125%
   },
-  paragraphBold: {
+  paragraphXSBold: {
     fontSize: paragraphWeightXS,
     fontWeight: '700',
     lineHeight: 1.25, // 125%

@@ -11,7 +11,7 @@ export const ButtonTheme = styled.button`
 export function SwitcherTheme() {
   const themeContext = useContext(ThemeContext);
   const colorLight = themeContext.colors.primary.main.color;
-  const colorDark = themeContext.colors.primary.contrast.color;
+  const colorDark = themeContext.colors.primary.main.color;
 
   const lightIcon = (
     <svg
