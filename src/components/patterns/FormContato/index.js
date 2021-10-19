@@ -47,7 +47,7 @@ function FormContent() {
   };
 
   const [submissionStatus, setSubmissionStatus] = useState(
-    formListStates.DEFAULT
+    formListStates.DEFAULT,
   );
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -65,14 +65,14 @@ function FormContent() {
         })
         .then((respostaConvertidaEmObjeto) => {
           setMessageSnackbar(
-            `${respostaConvertidaEmObjeto?.name} sua mensagem foi enviada com sucesso!`
+            `${respostaConvertidaEmObjeto?.name} sua mensagem foi enviada com sucesso!`,
           );
           setOpenSnackbar(true);
           setSubmissionStatus(formListStates.DONE);
         })
         .catch(() => {
           setMessageSnackbar(
-            'Desculpe, mas sua mensagem não pode ser enviada.'
+            'Desculpe, mas sua mensagem não pode ser enviada.',
           );
           setOpenSnackbar(true);
           setSubmissionStatus(formListStates.ERROR);
@@ -88,9 +88,9 @@ function FormContent() {
     },
   });
 
-  const isActiveButtonContato = isEmpty(form.name) ||
-                                isEmpty(form.email) ||
-                                isEmpty(form.message);
+  const isActiveButtonContato = isEmpty(form.name)
+    || isEmpty(form.email)
+    || isEmpty(form.message);
 
   return (
     <Form onSubmit={form.handleSubmit}>
