@@ -88,8 +88,9 @@ function FormContent() {
     },
   });
 
-  const isActiveButtonContato =
-    isEmpty(form.name) || isEmpty(form.email) || isEmpty(form.message);
+  const isActiveButtonContato = isEmpty(form.name) ||
+                                isEmpty(form.email) ||
+                                isEmpty(form.message);
 
   return (
     <Form onSubmit={form.handleSubmit}>
