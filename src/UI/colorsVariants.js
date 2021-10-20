@@ -17,6 +17,21 @@ const colorsTheme = {
   },
 };
 
+const colorsStatus = {
+  error: {
+    main: {
+      color: '#dc3545',
+      contrastText: '#fff',
+    },
+  },
+  success: {
+    main: {
+      color: '#28a745',
+      contrastText: '#fff',
+    },
+  },
+};
+
 export const colorsLight = {
   background: {
     main: {
@@ -42,6 +57,7 @@ export const colorsLight = {
     },
   },
   ...colorsTheme,
+  ...colorsStatus,
 };
 
 export const colorsDark = {
@@ -72,4 +88,5 @@ export const colorsDark = {
     },
   },
   ...colorsTheme,
+  ...colorsStatus,
 };
