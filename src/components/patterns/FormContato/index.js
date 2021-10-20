@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
+import * as yup from 'yup';
 import Button from '../../commons/Buttons/Button';
 import TextField from '../../forms/TextField';
 import Box from '../../foundation/layout/Box';
@@ -22,6 +23,21 @@ const Form = styled.form`
   justify-content: center;
   margin-right: 15px;
 `;
+
+const ContactSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('"Nome" é obrigatório')
+    .min(3, 'Preencha ao menos 3 caracteres'),
+  email: yup
+    .string()
+    .required('"Email" é obrigatório')
+    .email('Informe um email válido'),
+  message: yup
+    .string()
+    .required('"Mensagem" é obrigatória')
+    .min(30, 'Sua mensagem precisa ter ao menos 30 caracteres'),
+});
 
 function FormContent() {
   const initialValues = {
@@ -65,6 +81,11 @@ function FormContent() {
           form.setIsFormSubmitted(false);
         });
     },
+    async validateSchema(values) {
+      return ContactSchema.validate(values, {
+        abortEarly: false,
+      });
+    },
   });
 
   const isActiveButtonContato = isEmpty(form.name)
@@ -72,7 +93,6 @@ function FormContent() {
     || isEmpty(form.message);
 
   return (
-
     <Form onSubmit={form.handleSubmit}>
       <Logo height={{ xs: '100px', md: '100px' }} />
       <Text
@@ -103,7 +123,10 @@ function FormContent() {
           name="name"
           color="primary.main"
           value={form.values.name}
+          error={form.errors.name}
+          isTouched={form.touched.name}
           onChange={form.handleChange} // capturadores
+          onBlur={form.handleBlur}
         />
       </div>
       <div>
@@ -113,7 +136,10 @@ function FormContent() {
           name="email"
           color="primary.main"
           value={form.values.email}
+          error={form.errors.email}
+          isTouched={form.touched.email}
           onChange={form.handleChange}
+          onBlur={form.handleBlur}
         />
       </div>
       <div>
@@ -123,7 +149,10 @@ function FormContent() {
           color="primary.main"
           name="message"
           value={form.values.message}
+          error={form.errors.message}
+          isTouched={form.touched.message}
           onChange={form.handleChange}
+          onBlur={form.handleBlur}
         />
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
