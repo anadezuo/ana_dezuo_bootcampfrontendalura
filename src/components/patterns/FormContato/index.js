@@ -39,7 +39,7 @@ const ContactSchema = yup.object().shape({
     .min(30, 'Sua mensagem precisa ter ao menos 30 caracteres'),
 });
 
-function FormContent() {
+function FormContent({ onSubmit }) {
   const initialValues = {
     name: '',
     email: '',
@@ -93,7 +93,7 @@ function FormContent() {
     || isEmpty(form.message);
 
   return (
-    <Form onSubmit={form.handleSubmit}>
+    <Form onSubmit={onSubmit || form.handleSubmit}>
       <Logo height={{ xs: '100px', md: '100px' }} />
       <Text
         variant="title2"
@@ -186,7 +186,7 @@ function FormContent() {
   );
 }
 
-export default function FormContato({ propsModal, setModal }) {
+export default function FormContato({ propsModal, setModal, onSubmit }) {
   const themeContext = useContext(ThemeContext);
 
   return (
@@ -219,7 +219,7 @@ export default function FormContato({ propsModal, setModal }) {
           >
             <ButtonClose setAction={setModal} />
           </Box>
-          <FormContent />
+          <FormContent onSubmit={onSubmit}/>
         </Box>
       </Grid.Col>
     </Grid.Row>
