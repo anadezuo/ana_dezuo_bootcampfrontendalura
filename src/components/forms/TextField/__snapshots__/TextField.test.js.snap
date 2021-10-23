@@ -19,8 +19,41 @@ exports[`<TextField /> renders component 1`] = `
 <input
   class="c0 c1"
   href=""
-  name="nome"
-  placeholder="Nome"
+  name="name"
+  placeholder="Seu nome"
+  type="p"
   value="Ju"
+/>
+`;
+
+exports[`<TextField /> when field is invalid displays the respective error message 1`] = `
+.c0 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #212121;
+  padding: 12px 16px;
+  outline: 0;
+  border-radius: 5px;
+  background-color: inherit;
+  border-color: #dc3545;
+}
+
+.c1 + span {
+  color: #dc3545;
+  font-size: 11px;
+}
+
+<input
+  class="c0 c1"
+  href=""
+  name="email"
+  placeholder="email@dominio.com.br"
+  type="p"
+  value="ana@teste.com"
 />
 `;
