@@ -186,6 +186,14 @@ function FormContent({ onSubmit }) {
   );
 }
 
+FormContent.propTypes = {
+  onSubmit: PropTypes.func,
+};
+
+FormContent.defaultProps = {
+  onSubmit: undefined,
+};
+
 export default function FormContato({ propsModal, setModal, onSubmit }) {
   const themeContext = useContext(ThemeContext);
 
@@ -219,7 +227,7 @@ export default function FormContato({ propsModal, setModal, onSubmit }) {
           >
             <ButtonClose setAction={setModal} />
           </Box>
-          <FormContent onSubmit={onSubmit}/>
+          <FormContent onSubmit={onSubmit} />
         </Box>
       </Grid.Col>
     </Grid.Row>
@@ -229,4 +237,9 @@ export default function FormContato({ propsModal, setModal, onSubmit }) {
 FormContato.propTypes = {
   propsModal: PropTypes.shape({}).isRequired,
   setModal: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
+};
+
+FormContato.defaultProps = {
+  onSubmit: undefined,
 };

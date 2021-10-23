@@ -1,7 +1,6 @@
 import React from 'react';
 import user from '@testing-library/user-event';
 import { render, screen } from '../../../infra/test/testUtils';
-
 import TextField from './index';
 
 describe('<TextField />', () => {
@@ -13,7 +12,7 @@ describe('<TextField />', () => {
         value="Ju"
         onChange={() => {}}
         name="name"
-      />
+      />,
     );
     const textField = screen.getByPlaceholderText(/nome/i);
     expect(textField).toMatchSnapshot();
@@ -31,7 +30,7 @@ describe('<TextField />', () => {
             onChange={onChangeMock}
             name="name"
             isTouched
-          />
+          />,
         );
         const inputNome = screen.getByPlaceholderText(/nome/i);
         user.type(inputNome, 'Ana Teste');
@@ -51,13 +50,13 @@ describe('<TextField />', () => {
           name="email"
           isTouched
           error='"Email" é obrigatório'
-        />
+        />,
       );
 
       const inputEmail = screen.getByPlaceholderText(/email/i);
       expect(inputEmail).toHaveValue('ana@teste.com');
       expect(screen.getByRole('alert')).toHaveTextContent(
-        '"Email" é obrigatório'
+        '"Email" é obrigatório',
       );
       expect(inputEmail).toMatchSnapshot();
     });
