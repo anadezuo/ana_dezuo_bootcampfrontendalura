@@ -93,7 +93,7 @@ function FormContent({ onSubmit }) {
     || isEmpty(form.message);
 
   return (
-    <Form onSubmit={onSubmit || form.handleSubmit}>
+    <Form id="formContact" onSubmit={onSubmit || form.handleSubmit}>
       <Logo height={{ xs: '100px', md: '100px' }} />
       <Text
         variant="title2"
@@ -166,6 +166,7 @@ function FormContent({ onSubmit }) {
         </Button>
         {submissionStatus === formListStates.DONE && (
           <SnackbarAlert
+            id={`${TypesSnackbar.SUCCESS}`}
             type={TypesSnackbar.SUCCESS}
             message={messageSnackbar}
             openSnackbar={openSnackbar}
@@ -225,7 +226,7 @@ export default function FormContato({ propsModal, setModal, onSubmit }) {
             alignItems="flex-end"
             width="100%"
           >
-            <ButtonClose setAction={setModal} />
+            <ButtonClose id="formContact-closeButton" setAction={setModal} />
           </Box>
           <FormContent onSubmit={onSubmit} />
         </Box>

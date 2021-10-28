@@ -19,6 +19,7 @@ export default function ButtonFormContactWrapper() {
       </Modal>
       <Box margin="15px">
         <Button
+          id="contact-button"
           variant="theme.primary"
           color="primary.main"
           onClick={() => setModal(true)}
