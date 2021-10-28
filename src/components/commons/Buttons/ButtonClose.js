@@ -13,12 +13,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default function ButtonClose({ setAction }) {
+export default function ButtonClose({ setAction, ...props }) {
   return (
     <Button
       onClick={() => {
         setAction(false);
       }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
     >
       <Image src={iconClose} alt="Imagem em x que fecha a tela" />
     </Button>
