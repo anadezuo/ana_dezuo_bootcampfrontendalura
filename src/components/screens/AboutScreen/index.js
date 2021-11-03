@@ -8,6 +8,7 @@ import ButtonFormContactWrapper from '../../wrappers/ButtonFormContactWrapper';
 import AboutWrapper from './styles';
 import Box from '../../foundation/layout/Box';
 
+export { getContent } from './getContent';
 export default function AboutScreen({ messages }) {
   const themeContext = useContext(ThemeContext);
   const { color } = themeContext.colors.primary.main;
