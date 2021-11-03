@@ -4,8 +4,8 @@ import { GraphQLClient, gql } from 'graphql-request';
 import websitePageHOC from '../src/components/wrappers/WebsitePageWrapper/hoc';
 import AboutScreen from '../src/components/screens/AboutScreen';
 
-function AboutPage({messages}) {
-  return <AboutScreen messages={messages}/>;
+function AboutPage({ messages }) {
+  return <AboutScreen messages={messages} />;
 }
 
 export default websitePageHOC(AboutPage, {
@@ -14,8 +14,7 @@ export default websitePageHOC(AboutPage, {
   },
 });
 
-
-export async function getStaticProps(){
+export async function getStaticProps() {
   const TOKEN = process.env.REACT_APP_DATO_TOKEN;
   const DatoCMSURL = 'https://graphql.datocms.com/';
 

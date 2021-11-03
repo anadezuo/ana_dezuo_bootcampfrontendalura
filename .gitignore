@@ -39,4 +39,4 @@ cypress/integration/2-advanced-examples
 
 
 #env
-.env
+.env.local
