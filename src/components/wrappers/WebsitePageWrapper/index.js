@@ -8,7 +8,6 @@ import Footer from '../../Footer';
 import Cabecalho from '../../Cabecalho';
 import { WebsitePageContext } from './context';
 
-export { WebsitePageContext } from './context';
 export default function WebsitePageWrapper({
   children,
   seoProps,

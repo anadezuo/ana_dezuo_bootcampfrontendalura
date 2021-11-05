@@ -8,7 +8,7 @@ import WebsitePageWrapper from '..';
 
 export default function websitePageHOC(
   PageComponent,
-  { pageWrapperProps } = { pageWrapperProps: {} }
+  { pageWrapperProps } = { pageWrapperProps: {} },
 ) {
   // função que receberá funções como parâmetro, e irá retornar outras funções
   return (props) => (
