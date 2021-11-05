@@ -31,9 +31,8 @@ export default function AboutScreen({ messages }) {
             variant={{ xs: 'title2XS', md: 'title2' }}
             color="primary.main"
             marginBottom="20px"
-          >
-            {messages.pageAbout.title}
-          </Text>
+            cmsKey="pageAbout.title"
+          />
 
           <Text
             tag="p"
