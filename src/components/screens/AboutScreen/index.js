@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import Text from '../../foundation/Text';
 import LinkdienIcon from '../../../assets/icons/LinkedienIcon';
@@ -7,7 +8,8 @@ import ButtonFormContactWrapper from '../../wrappers/ButtonFormContactWrapper';
 import AboutWrapper from './styles';
 import Box from '../../foundation/layout/Box';
 
-export default function AboutScreen() {
+export { getContent } from './getContent';
+export default function AboutScreen({ messages }) {
   const themeContext = useContext(ThemeContext);
   const { color } = themeContext.colors.primary.main;
 
@@ -29,30 +31,19 @@ export default function AboutScreen() {
             variant={{ xs: 'title2XS', md: 'title2' }}
             color="primary.main"
             marginBottom="20px"
-          >
-            Oi! Eu sou a Ana...
-          </Text>
+            cmsKey="pageAbout.title"
+          />
 
           <Text
             tag="p"
             variant={{ xs: 'paragraphXSLight', md: 'paragraphLight' }}
             color="primary.main"
           >
-            O mundo da tecnologia sempre me fascinou e encantou, com aquele ar
-            de mistério de como tudo funcionava, e foi que me formei em análise
-            e desenvolvimento de sistemas pela Fatec Dom Amary Castanho - Itu, e
-            desde 2013 atuando como desenvolvedora de software no mercado.
-            <br />
-            <br />
-            Durante minha trajetória, está como maior parte a manutenção de um
-            ERP, projetos de performance em bancos relacionais e NoSQL, e um
-            aplicativo de captura de pedidos realizado em Flutter.
-            <br />
-            <br />
-            Atualmente sou uma desenvolvedora Front-End, conhecendo um pouco
-            mais sobre o ReactJs, através de estudo realizados por conta
-            própria, uma formação em React, e ainda em execução o Bootcamp
-            Front-End Avançado da Alura.
+            <Box
+              dangerouslySetInnerHTML={{
+                __html: messages.pageAbout.description,
+              }}
+            />
           </Text>
         </AboutWrapper.Text>
       </AboutWrapper.Information>
@@ -112,3 +103,8 @@ export default function AboutScreen() {
     </AboutWrapper>
   );
 }
+
+AboutScreen.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  messages: PropTypes.object.isRequired,
+};
