@@ -60,7 +60,7 @@
     "husky": "^7.0.2",
     "jest": "^27.2.4",
     "jest-canvas-mock": "^2.3.1",
-    "jest-styled-components": "^7.0.5",
+    "jest-styled-components": "^7.0.8",
     "shelljs": "^0.8.4"
   },
   "license": "MIT",
