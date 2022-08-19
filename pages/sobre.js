@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import websitePageHOC from '../src/components/wrappers/WebsitePageWrapper/hoc';
-import AboutScreen from '../src/components/screens/AboutScreen';
+import AboutScreen, { getContent } from '../src/components/screens/AboutScreen';
 
-function AboutPage() {
-  return <AboutScreen />;
+function AboutPage({ messages }) {
+  return <AboutScreen messages={messages} />;
 }
 
 export default websitePageHOC(AboutPage, {
@@ -11,3 +12,18 @@ export default websitePageHOC(AboutPage, {
     seoProps: { headTitle: 'Sobre' },
   },
 });
+
+export async function getStaticProps({ preview }) {
+  const messages = await getContent({ preview });
+
+  return {
+    props: {
+      messages,
+    },
+  };
+}
+
+AboutPage.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  messages: PropTypes.object.isRequired,
+};

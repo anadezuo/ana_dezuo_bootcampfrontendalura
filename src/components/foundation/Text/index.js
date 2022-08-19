@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import propToStyle from '../../../theme/utils/propToStyle';
 import TextStyleVariantsMap from '../../../UI/TextStyleVariantsMap';
 import Link from '../../commons/Link';
+import { WebsitePageContext } from '../../wrappers/WebsitePageWrapper/context';
 
 function hasColor(props) {
   if (props.color !== undefined) {
@@ -37,8 +38,14 @@ const TextBase = styled.span`
 `;
 
 export default function Text({
-  tag, variant, children, href, ...props
+  tag, variant, children, href, cmsKey, ...props
 }) {
+  const websitePageContext = React.useContext(WebsitePageContext);
+
+  const componentContent = cmsKey
+    ? websitePageContext.getCMSContent(cmsKey)
+    : children;
+
   return (
     <TextBase
       as={href ? Link : tag}
@@ -47,7 +54,7 @@ export default function Text({
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
-      {children}
+      {componentContent}
     </TextBase>
   );
 }
@@ -57,6 +64,7 @@ Text.propTypes = {
   variant: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
   children: PropTypes.node,
   href: PropTypes.string,
+  cmsKey: PropTypes.string,
 };
 
 Text.defaultProps = {
@@ -64,4 +72,5 @@ Text.defaultProps = {
   variant: 'paragraph',
   children: null,
   href: '',
+  cmsKey: undefined,
 };

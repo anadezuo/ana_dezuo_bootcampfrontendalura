@@ -39,7 +39,7 @@ const ContactSchema = yup.object().shape({
     .min(30, 'Sua mensagem precisa ter ao menos 30 caracteres'),
 });
 
-function FormContent() {
+function FormContent({ onSubmit }) {
   const initialValues = {
     name: '',
     email: '',
@@ -93,7 +93,7 @@ function FormContent() {
     || isEmpty(form.message);
 
   return (
-    <Form onSubmit={form.handleSubmit}>
+    <Form id="formContact" onSubmit={onSubmit || form.handleSubmit}>
       <Logo height={{ xs: '100px', md: '100px' }} />
       <Text
         variant="title2"
@@ -166,6 +166,7 @@ function FormContent() {
         </Button>
         {submissionStatus === formListStates.DONE && (
           <SnackbarAlert
+            id={`${TypesSnackbar.SUCCESS}`}
             type={TypesSnackbar.SUCCESS}
             message={messageSnackbar}
             openSnackbar={openSnackbar}
@@ -186,7 +187,15 @@ function FormContent() {
   );
 }
 
-export default function FormContato({ propsModal, setModal }) {
+FormContent.propTypes = {
+  onSubmit: PropTypes.func,
+};
+
+FormContent.defaultProps = {
+  onSubmit: undefined,
+};
+
+export default function FormContato({ propsModal, setModal, onSubmit }) {
   const themeContext = useContext(ThemeContext);
 
   return (
@@ -217,9 +226,9 @@ export default function FormContato({ propsModal, setModal }) {
             alignItems="flex-end"
             width="100%"
           >
-            <ButtonClose setAction={setModal} />
+            <ButtonClose id="formContact-closeButton" setAction={setModal} />
           </Box>
-          <FormContent />
+          <FormContent onSubmit={onSubmit} />
         </Box>
       </Grid.Col>
     </Grid.Row>
@@ -229,4 +238,9 @@ export default function FormContato({ propsModal, setModal }) {
 FormContato.propTypes = {
   propsModal: PropTypes.shape({}).isRequired,
   setModal: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
+};
+
+FormContato.defaultProps = {
+  onSubmit: undefined,
 };

@@ -16,7 +16,7 @@ function Alert(props) {
 }
 
 export function SnackbarAlert({
-  type, message, openSnackbar, setOpenSnackbar,
+  type, message, openSnackbar, setOpenSnackbar, ...props
 }) {
   const handleClose = () => {
     setOpenSnackbar(false);
@@ -24,7 +24,13 @@ export function SnackbarAlert({
 
   return (
     <div>
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      >
         <Alert onClose={handleClose} severity={type}>
           {message}
         </Alert>

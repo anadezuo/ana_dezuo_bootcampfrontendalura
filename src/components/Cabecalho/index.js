@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Menu from './styles';
 import Text from '../foundation/Text';
 import { ButtonTheme, SwitcherTheme } from '../../theme/SwitcherTheme';
@@ -8,9 +8,9 @@ import LogoDescription from '../commons/Logo/LogoDescription';
 export default function Cabecalho() {
   const { toggleTheme } = useTheme();
 
-  function handleToggleTheme() {
+  const handleToggleTheme = useCallback(() => {
     toggleTheme();
-  }
+  });
 
   return (
     <Menu>
